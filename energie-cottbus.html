@@ -1,0 +1,306 @@
+<!DOCTYPE html>
+<html lang="de">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Energie Cottbus</title>
+    <style>
+        body {
+            font-family: 'Arial', sans-serif;
+            line-height: 1.6;
+            margin: 0;
+            padding: 0;
+            background-color: #f4f4f4;
+            color: #333;
+        }
+
+        header {
+            background: #ec1c24;
+            color: #fff;
+            padding: 20px;
+            text-align: center;
+            font-size: 2.5rem;
+            font-weight: bold;
+        }
+
+        header img {
+            width: 60px; /* Größeres Logo */
+            height: auto;
+            margin-right: 10px;
+            vertical-align: middle;
+        }
+
+        nav {
+            background: #333;
+            padding: 10px;
+            text-align: center;
+        }
+
+        nav a {
+            color: #fff;
+            text-decoration: none;
+            margin-right: 15px;
+            font-size: 1.2rem;
+        }
+
+        nav a:hover {
+            text-decoration: underline;
+            color: #ec1c24;
+        }
+
+        main {
+            max-width: 900px;
+            margin: 30px auto;
+            padding: 30px;
+            background: #fff;
+            border-radius: 10px;
+            box-shadow: 0 0 20px rgba(0, 0, 0, 0.1);
+        }
+
+        h1, h2 {
+            color: #000;
+            margin-bottom: 20px;
+        }
+
+        ul {
+            list-style-type: disc;
+            padding-left: 20px;
+            margin: 20px 0;
+        }
+
+        ul li {
+            margin-bottom: 10px;
+        }
+
+        .legend-section ul, .stadium-section ul {
+            padding-left: 0;
+            list-style-type: none;
+            margin: 10px 0;
+        }
+
+        .legend-section li, .stadium-section li {
+            background: #f9f9f9;
+            padding: 15px;
+            margin: 10px 0;
+            border-radius: 5px;
+            box-shadow: 0 0 5px rgba(0, 0, 0, 0.1);
+        }
+
+        footer {
+            text-align: center;
+            padding: 20px;
+            background: #ec1c24;
+            color: #fff;
+            position: relative;
+            bottom: 0;
+            width: 100%;
+        }
+
+        .logo-history-section {
+            margin-top: 40px;
+        }
+
+        .logo-history-section h2 {
+            text-align: center;
+            color: #000;
+        }
+
+        .logo-history-images {
+            display: flex;
+            justify-content: space-between;
+            flex-wrap: wrap; /* Ermöglicht das Umbrechen der Logos in mehrere Reihen */
+            gap: 20px; /* Abstand zwischen den Logos */
+            margin-top: 20px;
+        }
+
+        .logo-history-images .logo-box {
+            width: calc(33.33% - 20px); /* Maximale Breite eines Logos (max. 3 pro Reihe) */
+            height: 160px; /* Höhe der Kästchen */
+            display: flex;
+            flex-direction: column; /* Damit das Jahr unter dem Logo steht */
+            justify-content: center;
+            align-items: center;
+            background-color: #f9f9f9;
+            border-radius: 8px;
+            box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.1);
+            overflow: hidden; /* Verhindert, dass Bilder über die Box hinausragen */
+            padding: 10px;
+            box-sizing: border-box;
+        }
+
+        .logo-history-images img {
+            max-width: 100%; /* Passt die Breite des Logos an die Größe des Containers an */
+            max-height: 100%; /* Passt die Höhe des Logos an die Größe des Containers an */
+            object-fit: contain; /* Erhält das Seitenverhältnis des Bildes */
+        }
+
+        .logo-history-images .year {
+            font-size: 14px;
+            color: #333;
+            margin-top: 10px;
+            font-style: italic;
+        }
+
+        .navigation-icons {
+            position: absolute;
+            top: 20px; /* Abstand vom oberen Rand */
+            left: 20px; /* Abstand vom linken Rand */
+            display: flex;
+            gap: 15px;
+            z-index: 1000;
+        }
+
+        .nav-icon {
+            text-decoration: none;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            width: 45px;
+            height: 45px;
+            background-color: #f0f0f0;
+            color: black;
+            font-size: 24px;
+            border-radius: 50%;
+            box-shadow: 0px 2px 4px rgba(0, 0, 0, 0.2);
+            transition: transform 0.3s ease, background-color 0.3s ease, box-shadow 0.3s ease;
+        }
+
+        .nav-icon:hover {
+            transform: scale(1.2);
+            background-color: #ffcc00;
+            color: white;
+            box-shadow: 0px 4px 6px rgba(0, 0, 0, 0.3);
+        }
+
+        .nav-icon span {
+            font-size: 24px;
+        }
+
+        /* Neue Stile für die Abschnitte */
+        .section {
+            margin-bottom: 30px;
+        }
+
+        .section h2 {
+            margin-bottom: 15px;
+        }
+
+        .section ul {
+            padding-left: 20px;
+        }
+    </style>
+</head>
+<body>
+    <!-- Navigation-Symbole -->
+    <div class="navigation-icons">
+        <!-- Zurück-Pfeil -->
+        <a href="javascript:history.back()" class="nav-icon" title="Zurück">
+            <span>&#8592;</span> <!-- Pfeil nach links -->
+        </a>
+
+        <!-- Haus-Symbol für Startseite -->
+        <a href="../Startseite.html" class="nav-icon" title="Startseite">
+            <span>&#8962;</span> <!-- Haus-Symbol -->
+        </a>
+    </div>
+
+    <header>
+        <img src="../3. Liga Logos/Logo_Energie_Cottbus.png" alt="Energie Cottbus Logo">
+        Energie Cottbus
+    </header>
+
+    <main>
+        <h2>Allgemeine Fakten</h2>
+        <ul>
+            <li>Gründung: 1966</li>
+            <li>Stadt: Cottbus</li>
+            <li>Stadion: Stadion der Freundschaft</li>
+            <li>Mitglieder: 4327 (Stand: 25.09.2024)</li>
+            <li>Farben: Rot-Weiß</li>
+            <li>Weitere Sportarten: Fußball, Handball</li>
+        </ul>
+
+        <h2>Geschichte</h2>
+        <p>
+            Energie Cottbus wurde 1966 gegründet und spielte lange Zeit in der Regionalliga bzw. DDR Oberliga. Dennoch gelang ihnen 1996/97 unter Eduard Geyer der erstmalige Aufstieg in die 2. Bundesliga und 1999/00 der Aufstieg in die Bundesliga. Der Verein erlebte seinen größten Erfolg in den 2000er Jahren, als er regelmäßig in der ersten und zweiten Liga spielte. Durch finanzielle Probleme und sportliche Herausforderungen musste der Verein jedoch immer wieder mit Abstiegen kämpfen. Trotz dieser Rückschläge hat Energie Cottbus eine treue Anhängerschaft und wird weiterhin von vielen Fans unterstützt. 2016/17 verabschiedeten sie sich mit dem Abstieg in die Regionalliga Nordost wieder aus dem Profi Bereich. Sie sind bis heute der einzigste Verein aus ganz Brandenburg in der Bundesliga jemals.
+        </p>
+
+        <!-- Legenden -->
+        <div class="section legend-section">
+            <h2>Legenden von Energie Cottbus</h2>
+            <ul>
+                <li><strong>Eduard Geyer:</strong> Eduard Geyer war von 1994-2004 Trainer bei Energie Cottbus und schaffte mit ihnen den Aufstieg von der Regionalliga Nord/Ost bis in die Bundesliga. </li>
+                <li><strong>Tomislav Piplica:</strong> Tomislav Piplica spielte von 1998 bis 2011 für Energie Cottbus und war einer der besten Torhüter in der Vereinsgeschichte. Er spielte mit Cottbus in der Bundesliga, 2. Bundesliga und Regionalliga. Er ist ein gutes Beispiel für Vereinstreue beim FCE.</li>
+                <li><strong>Laurențiu Reghecampf:</strong> Laurențiu Reghecampf spielte von 2000-2005 bei Energie Cottbus.</li>
+                <li><strong>Christian Beeck:</strong> Christian Beeck spielte 1999-2005 im rot-weißen Trikot des FCE.</li>
+                <li><srong>Vasile Miriuță:</srong> Vasile Miriuță spielte von 1998-2002 bei Energie Cottbus. Er schoss eines der beiden Tore zum Aufstieg in die Bundesliga in der Saison 1999/2000.</li>
+                <li><strong>Franklin Bittencourt:</strong>Franklin Bittencourt spielte von 1998-2003 beim FCE. </li>
+                <li><strong>Detlef Irrgang:</strong>Detlef Irrgang spielte von 1985-1991 und von 1992-2000 für den FCE und gewann mit ihnen viermal den Brandebnurg Pokal. Er war maßgeblich an Erfolgen wie das erreichen des DFB Pokal Finals 1996/96 oder auch dem Aufstieg in die Bundesliga beteiligt. Er schoss das 1:0 gegen Köln am 34. Spieltag der 2. Bundesliga 1999/00 und leitete damit einen der größten Erfolge des FCE, den Aufstieg in die Bundesliga ein. Leider beende er im Aufstiegsjahr in die Bundesliga seine Karriere und spielte somit nie für den FCE in der Bundesliga. Er ist ein weiterer Spieler der Loyalität und Treue zum Verein bewies.</li>
+            </ul>
+        </div>
+
+        <!-- Erfolge -->
+        <div class="section success-section">
+            <h2>Erfolge von Energie Cottbus</h2>
+            <ul>
+                <li><strong>DFB-Pokal Finale:</strong> 1996/97 – Energie Cottbus erreichte das Finale nachdem sie sich im Achtelfinale und Viertelfinale spät im Elfmeterschießen gewannen.</li>
+                <li><strong>Meister Regionalliga Nordost:</strong> 3 Mal (2023/24, 2022/23, 2017/18)</li>
+                <li><strong>Landespokal Brandenburg Sieger:</strong> 10 Mal (2023/24, 2022/23, 2021/22, 2018/19, 2017/18, 2016/17, 20114/15, 1996/97, 1995/96, 1994/95)</li>
+            </ul>
+        </div>
+
+        <!-- Kultur und Philosophie -->
+        <div class="section culture-philosophy-section">
+            <h2>Kultur und Philosophie</h2>
+            <p>Die Philosophie von Energie Cottbus basiert auf harter Arbeit, Gemeinschaft und einem starken Willen, trotz aller Herausforderungen weiterzumachen. Der Verein hat eine tiefe Verbindung zu seiner Stadt und ist ein wichtiger Teil der lokalen Kultur. Die Fans sind bekannt für ihre leidenschaftliche Unterstützung, was das Stadion der Freundschaft zu einem Ort intensiver Atmosphäre macht.</p>
+        </div>
+
+        <!-- Rivalitäten -->
+        <div class="section rivalries-section">
+            <h2>Rivalitäten</h2>
+            <p>Die größten Rivalitäten von Energie Cottbus bestehen mit Vereinen wie Erzgebirge Aue und Dynamo Dresden. Spiele gegen diese Teams sind oft von intensiven Auseinandersetzungen geprägt, sowohl auf als auch neben dem Platz.</p>
+        </div>
+
+        <div class="logo-history-section">
+            <h2>Logo-Geschichte</h2>
+            <div class="logo-history-images">
+                <div class="logo-box">
+                    <img src="../Alte Logos/Alte Energie Cottbus Logos/25_1400738868.png" alt="Logo 1966-1990">
+                    <div class="year">1963-1966</div>
+                </div>
+                <div class="logo-box">
+                    <img src="../Alte Logos/Alte Energie Cottbus Logos/25_1400738882.png" alt="Logo 1990-2004">
+                    <div class="year">1966-keine Infos</div>
+                </div>
+                <div class="logo-box">
+                    <img src="../Alte Logos/Alte Energie Cottbus Logos/Altes_Logo_FC_Energie_Cottbus.png" alt="Logo keine Infos-1974">
+                    <div class="year">keine Infos-1974</div>
+                </div>
+                <div class="logo-box">
+                    <img src="../Alte Logos/Alte Energie Cottbus Logos/847_1514630945.png" alt="Logo 2004-2010">
+                    <div class="year">1974-2005</div>
+                </div>
+                <div class="logo-box">
+                    <img src="../3. Liga Logos/Logo_Energie_Cottbus.png" alt="Logo 2010-Present">
+                    <div class="year">2005-heute</div>
+                </div>
+            </div>
+        </div>
+
+        <div class="stadium-section">
+            <h2>Das Stadion der Freundschaft</h2>
+            <p>Das Stadion der Freundschaft ist die Heimstätte von Energie Cottbus. Es bietet Platz für etwa 22.000 Zuschauer und ist für seine beeindruckende Atmosphäre bei Heimspielen bekannt. Das Stadion wurde 2004 modernisiert und bietet heute zahlreiche Annehmlichkeiten für Fans und Spieler.</p>
+            <ul>
+                <li>Kapazität: 22.000 Plätze</li>
+                <li>Eröffnung: 1969</li>
+                <li>Modernisierung: 2004</li>
+                <li>Besonderheiten: Heimstätte von Energie Cottbus, regelmäßig Gastgeber von Bundesligaspielen und internationalen Spielen</li>
+            </ul>
+        </div>
+    </main>
+
+    <footer>
+        <p>&copy; 2024 Energie Cottbus. Alle Rechte vorbehalten.</p>
+    </footer>
+</body>
+</html>

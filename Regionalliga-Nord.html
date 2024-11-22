@@ -1,0 +1,327 @@
+<!DOCTYPE html>
+<html lang="de">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Regionalliga Nord</title>
+    <style>
+        body {
+            font-family: 'Arial', sans-serif;
+            margin: 0;
+            padding: 0;
+            background-color: #f4f4f4;
+            color: #333;
+            line-height: 1.6;
+        }
+
+        /* Navigation-Symbole (Back Arrow & Home Icon) */
+        .navigation-icons {
+            position: fixed;
+            top: 20px;
+            left: 20px;
+            display: flex;
+            gap: 20px;
+            z-index: 1000;
+        }
+
+        .nav-icon {
+            text-decoration: none;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            width: 40px;
+            height: 40px;
+            background-color: #f0f0f0;
+            color: black;
+            font-size: 24px;
+            border-radius: 50%;
+            box-shadow: 0px 2px 4px rgba(0, 0, 0, 0.2);
+            transition: transform 0.3s ease, background-color 0.3s ease, box-shadow 0.3s ease;
+        }
+
+        .nav-icon:hover {
+            transform: scale(1.2);
+            background-color: #ffcc00;
+            color: white;
+            box-shadow: 0px 4px 6px rgba(0, 0, 0, 0.3);
+        }
+
+        .nav-icon span {
+            font-size: 24px;
+        }
+
+        /* Hauptinhalt */
+        header {
+            background: #ffcc00;
+            color: #000;
+            text-align: center;
+            padding: 20px;
+            font-size: 2rem;
+            font-weight: bold;
+            border-bottom: 5px solid #333;
+        }
+
+        main {
+            max-width: 1100px;
+            margin: 40px auto;
+            padding: 20px;
+            background: #ffffff;
+            border-radius: 8px;
+            box-shadow: 0px 10px 30px rgba(0, 0, 0, 0.1);
+        }
+
+        h2 {
+            color: #333;
+            font-size: 1.8rem;
+            margin-bottom: 15px;
+            text-transform: uppercase;
+        }
+
+        .region-description {
+            font-size: 1.1rem;
+            color: #666;
+            margin-bottom: 30px;
+            text-align: justify;
+            line-height: 1.8;
+        }
+
+        .region-structure {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 20px;
+            justify-content: space-between;
+        }
+
+        .region-item {
+            background-color: #f9f9f9;
+            border: 1px solid #ddd;
+            border-radius: 8px;
+            padding: 20px;
+            width: 48%;
+            box-shadow: 0px 2px 4px rgba(0, 0, 0, 0.1);
+            transition: transform 0.3s ease, background-color 0.3s ease;
+        }
+
+        .region-item:hover {
+            transform: translateY(-5px);
+            background-color: #ffcc00;
+            color: white;
+        }
+
+        .region-item h3 {
+            color: #000;
+            font-size: 1.5rem;
+            margin-bottom: 10px;
+        }
+
+        .region-item p {
+            font-size: 1rem;
+            color: #444;
+        }
+
+/* Anpassung für das TSV Havelse Logo */
+.team-logo-havelse {
+    width: 35px;
+    height: 40px;
+}
+
+/* Anpassung für das Drochtersen-Assel Logo */
+.team-logo-drochtersen {
+    width: 35px;
+    height: 40px;
+}
+
+/* Anpassung für das SV Meppen Logo */
+.team-logo-meppen {
+    width: 40px;
+    height: 40px;
+}
+
+/* Anpassung für das SC Weiche Flensburg 08 Logo */
+.team-logo-flensburg {
+    width: 40px;
+    height: 40px;
+}
+
+/* Anpassung für das BW Lohne Logo */
+.team-logo-lohne {
+    width: 40px;
+    height: 35px;
+}
+
+/* Anpassung für das Kickers Emden Logo */
+.team-logo-emden {
+    width: 35px;
+    height: 40px;
+}
+
+/* Anpassung für das 1. FC Phönix Lübeck Logo */
+.team-logo-luebeck {
+    width: 35px;
+    height: 40px;
+}
+
+/* Anpassung für das Hamburger SV II Logo */
+.team-logo-hsv {
+    width: 45px;  /* Breite erhöhen */
+    height: 30px; /* Höhe reduzieren */
+}
+
+/* Anpassung für das Werder Bremen II Logo */
+.team-logo-bremen {
+    width: 30px;  /* Breite beibehalten */
+    height: 45px; /* Höhe erhöhen */
+}
+
+/* Anpassung für das VfB Lübeck Logo */
+.team-logo-vfb-luebeck {
+    width: 40px;
+    height: 40px;
+}
+
+/* Anpassung für das SSV Jeddeloh II Logo */
+.team-logo-jeddeloh {
+    width: 40px;
+    height: 30px;
+}
+
+/* Anpassung für das FC St. Pauli II Logo */
+.team-logo-st-pauli {
+    width: 40px;
+    height: 40px;
+}
+
+/* Anpassung für das VfB Oldenburg Logo */
+.team-logo-oldenburg {
+    width: 40px;
+    height: 30px;
+}
+
+/* Anpassung für das FC Teutonia Ottensen Logo */
+.team-logo-ottensen {
+    width: 40px;
+    height: 40px;
+}
+
+/* Anpassung für das Bremer SV Logo */
+.team-logo-bremer-sv {
+    width: 40px;
+    height: 40px;
+}
+
+/* Anpassung für das Eintracht Norderstedt Logo */
+.team-logo-norderstedt {
+    width: 40px;
+    height: 40px;
+}
+
+/* Anpassung für das SV Todesfelde Logo */
+.team-logo-todesfelde {
+    width: 35px;
+    height: 40px;
+}
+
+/* Anpassung für das Holstein Kiel II Logo */
+.team-logo-kiel {
+    width: 40px;
+    height: 40px;
+}
+
+        .team-list {
+            list-style-type: none;
+            padding: 0;
+        }
+
+        .team-list li {
+            display: flex;
+            align-items: center;
+            margin: 5px 0;
+        }
+
+        footer {
+            text-align: center;
+            padding: 10px 0;
+            background: #ffcc00;
+            color: #000;
+            position: relative;
+            bottom: 0;
+            width: 100%;
+        }
+    </style>
+</head>
+<body>
+    <!-- Navigation-Symbole -->
+    <div class="navigation-icons">
+        <!-- Zurück-Pfeil -->
+        <a href="javascript:history.back()" class="nav-icon" title="Zurück">
+            <span>&#8592;</span> <!-- Pfeil nach links -->
+        </a>
+
+        <!-- Haus-Symbol für Startseite -->
+        <a href="../Startseite.html" class="nav-icon" title="Startseite">
+            <span>&#8962;</span> <!-- Haus-Symbol -->
+        </a>
+    </div>
+
+    <header>
+        Regionalliga Nord
+    </header>
+    <main>
+        <h2>Über die Regionalliga Nord</h2>
+        <div class="region-description">
+            <p>
+                Die Regionalliga Nord ist eine von fünf Regionalligen im deutschen Fußball. Sie stellt die vierthöchste Liga im deutschen System dar und umfasst die Mannschaften aus den Bundesländern Niedersachsen, Bremen, Hamburg und Schleswig-Holstein. Die Liga wird von einem spannenden Wettbewerb geprägt, mit vielen Mannschaften, die um den Aufstieg in die 3. Liga kämpfen.
+            </p>
+            <p>
+                Die Regionalliga Nord hat eine lange Geschichte, die sich über mehrere Jahrzehnten erstreckt. Viele Vereine aus dieser Liga haben sich als wahre Talente-Züchter und als starke Konkurrenten für die höheren Ligen etabliert.
+            </p>
+        </div>
+
+        <div class="region-structure">
+            <div class="region-item">
+                <h3>Aktuelle Teams</h3>
+                <ul class="team-list">
+                    <li><img src="../Regionalliga Nord Logos/TSV_Havelse_logo.png" alt="TSV Havelse Logo" class="team-logo team-logo-havelse">TSV Havelse</li>
+                    <li><img src="../Regionalliga Nord Logos/1200px-SV_Drochtersen-Assel.png" alt="SV Drochtersen Assel Logo" class="team-logo team-logo-drochtersen">SV Drochtersen Assel</li>
+                    <li><img src="../Regionalliga Nord Logos/SV_Meppen_Logo_2022.svg.png" alt="SV Meppen Logo" class="team-logo team-logo-meppen">SV Meppen</li>
+                    <li><img src="../Regionalliga Nord Logos/SC_Weiche_Flensburg_08.png" alt="SC Weiche Flensburg 08 Logo" class="team-logo team-logo-flensburg">SC Weiche Flensburg 08</li>
+                    <li><img src="../Regionalliga Nord Logos/BW Lohne.png" alt="BW Lohne Logo" class="team-logo team-logo-lohne">BW Lohne</li>
+                    <li><img src="../Regionalliga Nord Logos/BSV_Kickers_Emden.png" alt="Kickers Emden Logo" class="team-logo team-logo-emden">Kickers Emden</li>
+                    <li><img src="../Regionalliga Nord Logos/1._FC_Phoenix_Luebeck_Logo.png" alt="1. FC Phönix Lübeck Logo" class="team-logo team-logo-luebeck">1. FC Phönix Lübeck</li>
+                    <li><img src="../Regionalliga Nord Logos/Hamburger_SV_logo.png" alt="Hamburger SV II Logo" class="team-logo team-logo-hsv">Hamburger SV II</li>
+                    <li><img src="../Regionalliga Nord Logos/SV-Werder-Bremen-Logo.png" alt="Werder Bremen II Logo" class="team-logo team-logo-bremen">Werder Bremen II</li>
+                    <li><img src="../Regionalliga Nord Logos/VfB_Lübeck.png" alt="VfB Lübeck Logo" class="team-logo team-logo-vfb-luebeck">VfB Lübeck</li>
+                    <li><img src="../Regionalliga Nord Logos/Logo_SSV_Jeddeloh.png" alt="SSV Jeddeloh II Logo" class="team-logo team-logo-jeddeloh">SSV Jeddeloh II</li>
+                    <li><img src="../Bundesliga Logos/Fc_st_pauli_logo.png" alt="FC St. Pauli II Logo" class="team-logo team-logo-st-pauli">FC St. Pauli II</li>
+                    <li><img src="../Regionalliga Nord Logos/VfB_Oldenburg.png" alt="VfB Oldenburg Logo" class="team-logo team-logo-oldenburg">VfB Oldenburg</li>
+                    <li><img src="../Regionalliga Nord Logos/FC_Teutonia_05_Ottensen_Logo.png" alt="FC Teutonia Ottensen Logo" class="team-logo team-logo-ottensen">FC Teutonia Ottensen</li>
+                    <li><img src="../Regionalliga Nord Logos/Bremer_SV_logo.png" alt="Bremer SV Logo" class="team-logo team-logo-bremer-sv">Bremer SV</li>
+                    <li><img src="../Regionalliga Nord Logos/Eintracht_Norderstedt_Logo.png" alt="Eintracht Norderstedt Logo" class="team-logo team-logo-norderstedt">Eintracht Norderstedt</li>
+                    <li><img src="../Regionalliga Nord Logos/SVTodesfelde_Logo.png" alt="SV Todesfelde Logo" class="team-logo team-logo-todesfelde">SV Todesfelde</li>
+                    <li><img src="../Regionalliga Nord Logos/Holstein_Kiel_Logo.png" alt="Holstein Kiel II Logo" class="team-logo team-logo-kiel">Holstein Kiel II</li>
+                </ul>
+            </div>
+
+            <div class="region-item">
+                <h3>Wettbewerbsstruktur</h3>
+                <p>Die Regionalliga Nord wird in einer Hin- und Rückrunde ausgetragen. Das beste Team steigt am Ende der Saison in die 3. Liga auf, während die letzten Teams in die unteren Ligen absteigen. Der Wettbewerb ist intensiv, da die Aufstiegsplätze hart umkämpft sind.</p>
+            </div>
+
+            <div class="region-item">
+                <h3>Vereinsgeschichte</h3>
+                <p>Viele Teams der Regionalliga Nord haben eine lange und stolze Geschichte. Einige Vereine aus der Region haben sogar in den 1970er und 1980er Jahren in der Bundesliga gespielt, bevor sie in die Regionalliga zurückfielen und sich heute erneut um den Aufstieg bemühen.</p>
+            </div>
+
+            <div class="region-item">
+                <h3>Besondere Spiele</h3>
+                <p>Einige der denkwürdigsten Spiele der Regionalliga Nord ziehen viele Fans an. Besonders die Derbys zwischen den norddeutschen Clubs sorgen immer wieder für Begeisterung und Spannung. Die Rivalität zwischen Hamburg und Bremen ist legendär.</p>
+            </div>
+
+        </div>
+    </main>
+
+    <footer>
+        © 2024 Regionalliga Nord
+    </footer>
+</body>
+</html>

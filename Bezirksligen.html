@@ -1,0 +1,134 @@
+<!DOCTYPE html>
+<html lang="de">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Bezirksligen</title>
+    <style>
+        /* Grundstil */
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+            background: linear-gradient(to bottom, #f0f0f0, #d6d6d6);
+            color: #333;
+            line-height: 1.6;
+        }
+
+        /* Kopfzeile */
+        h1 {
+            text-align: center;
+            font-size: 36px;
+            margin-top: 30px;
+            color: #cc0000;
+            text-shadow: 2px 2px 5px rgba(0, 0, 0, 0.2);
+        }
+
+        /* Abschnitt */
+        p {
+            text-align: center;
+            font-size: 20px;
+            font-weight: bold;
+            margin-top: 20px;
+            color: #444;
+        }
+
+        /* Liste */
+        ul {
+            margin: 30px auto;
+            padding: 20px;
+            max-width: 800px;
+            background-color: white;
+            border-radius: 10px;
+            box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.2);
+            list-style-type: none;
+        }
+
+        ul li {
+            font-size: 18px;
+            margin: 10px 0;
+            padding: 10px;
+            border-bottom: 1px solid #ddd;
+            transition: background-color 0.3s ease, transform 0.2s ease;
+        }
+
+        ul li:hover {
+            background-color: #ffe0e0;
+            transform: scale(1.02);
+        }
+
+        /* Symbole */
+        .navigation-icons {
+            position: fixed;
+            top: 10px;
+            left: 10px;
+            display: flex;
+            gap: 10px;
+            z-index: 1000;
+        }
+
+        .nav-icon {
+            text-decoration: none;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            width: 40px;
+            height: 40px;
+            background-color: #f0f0f0;
+            color: black;
+            font-size: 20px;
+            border-radius: 50%;
+            box-shadow: 0px 2px 4px rgba(0, 0, 0, 0.2);
+            transition: transform 0.3s ease, background-color 0.3s ease, box-shadow 0.3s ease;
+        }
+
+        .nav-icon:hover {
+            transform: scale(1.2);
+            background-color: #ffcc00;
+            color: white;
+            box-shadow: 0px 4px 6px rgba(0, 0, 0, 0.3);
+        }
+    </style>
+</head>
+<body>
+    <!-- Symbole für Navigation -->
+    <div class="navigation-icons">
+        <!-- Zurück-Pfeil -->
+        <a href="javascript:history.back()" class="nav-icon" title="Zurück">
+            <span>&#8592;</span>
+        </a>
+
+        <!-- Haus-Symbol -->
+        <a href="../Startseite.html" class="nav-icon" title="Startseite">
+            <span>&#8962;</span>
+        </a>
+    </div>
+
+    <!-- Inhalt der Seite -->
+    <h1>Bezirksligen</h1>
+    <p>Bezirksligen</p>
+    <ul>
+        <li>Bezirksliga Mecklenburg-Vorpommern (Staffeln Ost, Nord, West, Süd)</li>
+        <li>Bezirksliga Brandenburg (Staffeln Nord, Süd, West, Ost)</li>
+        <li>Bezirksliga Berlin (unterhalb der Landesliga Berlin)</li>
+        <li>Bezirksliga Sachsen (Staffeln Nord, Mitte, West, Ost)</li>
+        <li>Bezirksliga Sachsen-Anhalt (mehrere Staffeln, z.B. Nord und Süd)</li>
+        <li>Bezirksliga Thüringen (Staffeln Nord, Ost, Süd, West)</li>
+        <li>Bezirksliga Schleswig-Holstein (Staffeln Nord, Ost, West, Süd)</li>
+        <li>Bezirksliga Hamburg (Bezirksliga Nord, Süd, Ost, West)</li>
+        <li>Bezirksliga Bremen (eine oder mehrere Staffeln)</li>
+        <li>Bezirksliga Niedersachsen (Staffeln in den Bezirken Braunschweig, Hannover, Lüneburg, Weser-Ems)</li>
+        <li>Bezirksliga Hessen (Staffeln in Nordhessen, Mittelhessen, Südhessen)</li>
+        <li>Bezirksliga Rheinland (verschiedene Staffeln je nach Region)</li>
+        <li>Bezirksliga Südwest (Rheinland-Pfalz, Staffeln nach Regionen)</li>
+        <li>Bezirksliga Saarland (mehrere Staffeln)</li>
+        <li>Bezirksliga Mittelrhein (Staffeln nach Region, z.B. Köln, Bonn)</li>
+        <li>Bezirksliga Niederrhein (mehrere Staffeln, z.B. Gruppe 1 bis 4)</li>
+        <li>Bezirksliga Westfalen (verschiedene Staffeln in den Bezirken Ostwestfalen, Münsterland, Ruhrgebiet)</li>
+        <li>Bezirksliga Baden (Staffeln Nord, Mitte, Süd)</li>
+        <li>Bezirksliga Südbaden (Staffeln je nach Regionen)</li>
+        <li>Bezirksliga Württemberg (Staffeln in den Bezirken Nord, Ost, Süd, West)</li>
+        <li>Bezirksliga Bayern (verschiedene Staffeln in den Regierungsbezirken Oberbayern, Niederbayern, Oberpfalz, Oberfranken, Mittelfranken, Unterfranken, Schwaben)</li>
+    </ul>
+</body>
+</html>

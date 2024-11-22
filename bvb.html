@@ -1,0 +1,326 @@
+<!DOCTYPE html>
+<html lang="de">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Borussia Dortmund</title>
+    <style>
+        body {
+            font-family: 'Arial', sans-serif;
+            line-height: 1.6;
+            margin: 0;
+            padding: 0;
+            background-color: #f4f4f4;
+            color: #333;
+        }
+
+        header {
+            background: #fddb3a;
+            color: #000;
+            padding: 20px;
+            text-align: center;
+            font-size: 2.5rem;
+            font-weight: bold;
+        }
+
+        header img {
+            width: 60px; /* Größeres Logo */
+            height: auto;
+            margin-right: 10px;
+            vertical-align: middle;
+        }
+
+        nav {
+            background: #333;
+            padding: 10px;
+            text-align: center;
+        }
+
+        nav a {
+            color: #fff;
+            text-decoration: none;
+            margin-right: 15px;
+            font-size: 1.2rem;
+        }
+
+        nav a:hover {
+            text-decoration: underline;
+            color: #fddb3a;
+        }
+
+        main {
+            max-width: 900px;
+            margin: 30px auto;
+            padding: 30px;
+            background: #fff;
+            border-radius: 10px;
+            box-shadow: 0 0 20px rgba(0, 0, 0, 0.1);
+        }
+
+        h1, h2 {
+            color: #000;
+            margin-bottom: 20px;
+        }
+
+        ul {
+            list-style-type: disc;
+            padding-left: 20px;
+            margin: 20px 0;
+        }
+
+        ul li {
+            margin-bottom: 10px;
+        }
+
+        .legend-section ul, .stadium-section ul {
+            padding-left: 0;
+            list-style-type: none;
+            margin: 10px 0;
+        }
+
+        .legend-section li, .stadium-section li {
+            background: #f9f9f9;
+            padding: 15px;
+            margin: 10px 0;
+            border-radius: 5px;
+            box-shadow: 0 0 5px rgba(0, 0, 0, 0.1);
+        }
+
+        footer {
+            text-align: center;
+            padding: 20px;
+            background: #fddb3a;
+            color: #000;
+            position: relative;
+            bottom: 0;
+            width: 100%;
+        }
+        .logo-history-section {
+            margin-top: 40px;
+        }
+
+        .logo-history-section h2 {
+            text-align: center;
+            color: #000;
+        }
+
+        .logo-history-images {
+            display: flex;
+            justify-content: space-between;
+            flex-wrap: wrap; /* Ermöglicht das Umbrechen der Logos in mehrere Reihen */
+            gap: 20px; /* Abstand zwischen den Logos */
+            margin-top: 20px;
+        }
+
+        .logo-history-images .logo-box {
+            width: calc(33.33% - 20px); /* Maximale Breite eines Logos (max. 3 pro Reihe) */
+            height: 160px; /* Höhe der Kästchen */
+            display: flex;
+            flex-direction: column; /* Damit das Jahr unter dem Logo steht */
+            justify-content: center;
+            align-items: center;
+            background-color: #f9f9f9;
+            border-radius: 8px;
+            box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.1);
+            overflow: hidden; /* Verhindert, dass Bilder über die Box hinausragen */
+            padding: 10px;
+            box-sizing: border-box;
+        }
+
+        .logo-history-images img {
+            max-width: 100%; /* Passt die Breite des Logos an die Größe des Containers an */
+            max-height: 100%; /* Passt die Höhe des Logos an die Größe des Containers an */
+            object-fit: contain; /* Erhält das Seitenverhältnis des Bildes */
+        }
+
+        .logo-history-images .year {
+            font-size: 14px;
+            color: #333;
+            margin-top: 10px;
+            font-style: italic;
+        }
+
+
+        .navigation-icons {
+    position: absolute;
+    top: 20px; /* Abstand vom oberen Rand */
+    left: 20px; /* Abstand vom linken Rand */
+    display: flex;
+    gap: 15px;
+    z-index: 1000;
+}
+
+.nav-icon {
+    text-decoration: none;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 45px;
+    height: 45px;
+    background-color: #f0f0f0;
+    color: black;
+    font-size: 24px;
+    border-radius: 50%;
+    box-shadow: 0px 2px 4px rgba(0, 0, 0, 0.2);
+    transition: transform 0.3s ease, background-color 0.3s ease, box-shadow 0.3s ease;
+}
+
+.nav-icon:hover {
+    transform: scale(1.2);
+    background-color: #ffcc00;
+    color: white;
+    box-shadow: 0px 4px 6px rgba(0, 0, 0, 0.3);
+}
+
+.nav-icon span {
+    font-size: 24px;
+}
+
+    </style>
+</head>
+<body>
+    <!-- Navigation-Symbole -->
+    <div class="navigation-icons">
+        <!-- Zurück-Pfeil -->
+        <a href="javascript:history.back()" class="nav-icon" title="Zurück">
+            <span>&#8592;</span> <!-- Pfeil nach links -->
+        </a>
+
+        <!-- Haus-Symbol für Startseite -->
+        <a href="../Startseite.html" class="nav-icon" title="Startseite">
+            <span>&#8962;</span> <!-- Haus-Symbol -->
+        </a>
+    </div>
+
+    <header>
+        <img src="../Bundesliga Logos/Borussia_Dortmund_logo.png" alt="Borussia Dortmund Logo">
+        Borussia Dortmund
+    </header>
+
+    <main>
+        <h2>Allgemeine Fakten</h2>
+        <ul>
+            <li>Gründung: 19.12.1909</li>
+            <li>Stadt: Dortmund</li>
+            <li>Stadion: Signal Iduna Park</li>
+            <li>Mitglieder: 200.000</li>
+            <li>Farben: Schwarz-Gelb</li>
+            <li>Weitere Sportarten: Frauenfußball, Blindenfußball, Torball, Handball (Damen), Tischtennis (Herren)</li>
+        </ul>
+
+        <h2>Geschichte</h2>
+        <p>
+            Borussia Dortmund wurde 1909 gegründet und hat sich seitdem zu einem der erfolgreichsten und bekanntesten Fußballvereine Deutschlands entwickelt. Der Verein gewann seine erste Meisterschaft in der Saison 1955/56 und feierte 1966 seinen ersten internationalen Erfolg mit dem Gewinn des Europapokals der Pokalsieger. In den 1990er Jahren erreichte Dortmund mit dem Gewinn der Champions League 1997 seinen größten internationalen Erfolg. In den 2000er Jahren hatte der BVB mit finanziellen Problemen zu kämpfen, konnte sich jedoch stabilisieren und gewann unter Trainer Jürgen Klopp 2011 und 2012 zwei Bundesliga-Titel. Borussia Dortmund ist bekannt für seine leidenschaftlichen Fans und das imposante Stadion, den Signal Iduna Park, der zu den größten und lautesten in Europa gehört.
+        </p>
+        <h2>Gründung des Vereins</h2>
+        <p>
+            Der Verein Borussia Dortmund wurde am 19. Dezember 1909 von den 18 Männern: Franz und Paul Braun, Heinrich Cleve, Hans Debest, Paul Dziendzielle, Franz, Julius und Wilhelm Jacobi, Hans Kahn, Gustav Müller, Franz Risse, Fritz Schulte, Hans Siebold, August Tönnesmann, Heinrich und Robert Unger, Fritz Weber sowie Franz Wendt im Gasthof „Zum Wildschütz“ gegründet. Ursprünglich waren es 50 Männer die einen Verein unabhängig der Kirche gründen wollten, nach etwa einer Stunde verließen 32 Männer den Saal und informierten Kaplan Dewald über die Gründung. Kaplan Dewald wollte diese Sitzung auflösen dennoch wurde ihm der Zutriit verwährt. Die Gründung von Borussia Dortmund verlief spontan, ohne vorherige Namensvorschläge. Laut einer Anekdote wurde der Name „Borussia“ gewählt, weil an der Wand des Wildschützes eine Werbetafel der Borussia-Brauerei hing, die nahe dem Borsigplatz ihren Sitz hatte. Die Wahl des Namens war daher wahrscheinlich nicht als Ausdruck von Nationalstolz zu verstehen, obwohl „Borussia“ die latinisierte Bezeichnung für Preußen ist. Nach der Exkommunikation der Borussia durch Kaplan Dewald aufgrund der Spaltung der Dreifaltigkeitsgemeinde verließen einige Gründungsmitglieder den Verein, der jedoch bestehen blieb. Heinrich Unger wurde der erste Vorsitzende, trat aber Mitte 1910 zurück. Nach einem kurzen Intermezzo von Franz Risse übernahm Franz Jacobi und führte den Verein bis 1923. Die Borussia wurde ursprünglich gegründet, weil der Kaplan den Fußballsport verbot, doch neben der Fußballabteilung gab es auch eine Leichtathletikabteilung. Diese wurde am 19. Juni 1910 in den Westdeutschen Spielverband aufgenommen, gefolgt von der Fußballabteilung im Dezember. Die Aufnahme der Leichtathletikabteilung diente als “trojanisches Pferd”, da der Verband aufgrund vieler Vereinsgründungen häufig Aufnahmestopps verhängte. Der Tipp dazu kam von Walter Sanß, einem damaligen DFB-Funktionär.
+
+            Das erste Spiel fand am 15. Januar 1911 gegen den VfB Dortmund statt, das mit 9:3 gewonnen wurde. Die erste Meisterschaft wurde am 10. September 1911 in Rauxel mit 1:0 gegen den Turnerbund Rauxel gewonnen.
+        </p>
+
+        <div class="logo-history-section">
+            <h2>Verlauf der Borussia Dortmund Logos</h2>
+            <p>Im Laufe der Jahre hat Borussia Dortmund verschiedene Logos verwendet. Hier zeigen wir die Entwicklung des Vereinslogos von den ersten Entwürfen bis heute.</p>
+            
+            <div class="logo-history-images">
+                <div class="logo-box">
+                <img src="../Alte Logos/Alte BVB Logos/Borussia-Dortmund-Logo-1913-1919.png" alt="Logo 1909" title="1909-1916">
+                <div class="year">1909-1916</div>
+                </div>
+                <div class="logo-box">
+                <img src="../Alte Logos/Alte BVB Logos/Borussia-Dortmund-Logo-1919-1945.png" alt="Logo 1960s" title="1919-1945">
+                <div class="year">1919-1945</div>
+                </div>
+                <div class="logo-box">
+                <img src="../Alte Logos/Alte BVB Logos/Logo_Borussia_Dortmund_(1945-1964).png" alt="Logo 1990s" title="1945-1964">
+                <div class="year">1945-1964</div>
+                </div>
+                <div class="logo-box">
+                <img src="../Alte Logos/Alte BVB Logos/Borussia-Dortmund-Logo-1964-1974.png" alt="Logo 2000s" title="1964-1974">
+                <div class="year">1964-1974</div>
+                </div>
+                <div class="logo-box">
+                <img src="../Alte Logos/Alte BVB Logos/Borussia-Dortmund-Logo-1974-1976.png" alt="Logo 2020s" title="1974-1976">
+                <div class="year">1974-1976</div>
+                </div>
+                <div class="logo-box">
+                <img src="../Alte Logos/Alte BVB Logos/Borussia-Dortmund-Logo-1976-1978.png" alt="Logo 2020s" title="1976-1978">
+                <div class="year">1976-1978</div>
+                </div>
+                <div class="logo-box">
+                <img src="../Alte Logos/Alte BVB Logos/Borussia-Dortmund-Logo-1978-1993.png" alt="Logo 2020s" title="1978-1993">
+                <div class="year">1978-1993</div>
+                </div>
+                <div class="logo-box">
+                <img src="../Alte Logos/Alte BVB Logos/Borussia-Dortmund-Logo-1993-2012.png" alt="Logo 2020s" title="1993-2012">
+                <div class="year">1993-2012</div>
+                </div>
+                <div class="logo-box">
+                <img src="../Alte Logos/Alte BVB Logos/Borussia-Dortmund-Logo.png" alt="Logo 2020s" title="2012-heute">
+                <div class="year">2012-heute</div>
+                </div>
+            </div>
+        </div>
+
+        <h2>Erfolge</h2>
+        <ul>
+            <li>Deutscher Meister: 8 Mal (1955/56, 1956/57, 1962/63, 1994/95, 1995/96, 2001/02, 2010/11, 2011/12)</li>
+            <li>Deutscher Pokalsieger: 5 Mal (1964/64, 1988/89, 2011/12, 2016/17, 2020/21)</li>
+            <li>Champions League: 1 Mal (1996/97)</li>
+            <li>Europapokal der Pokalsieger: 1 Mal (1965/66)</li>
+            <li>Deutscher Superpokalsieger: 6 Mal (1989/90,1995/96, 1996/97, 2013/14, 2014/15, 2019/20)</li>
+            <li>Weltpokalsieger: 1 mal (1997)</li>
+            <li>Westdeutscher Pokalsieger: (1964/65, 1962/63)</li>
+        </ul>
+
+        <h2>Legenden</h2>
+        <div class="legend-section">
+            <ul>
+                <li><strong>Michael Zorc:</strong> Eine Borussia-Dortmund-Legende, die von 1981 bis 2021 für den Verein spielte und mit ihm mehrere Meisterschaften sowie die Champions League 1997 gewann.</li>
+                <li><strong>Mats Hummels:</strong> Spielte von 2008-2016 und von 2019-2024 beim BVB und gewann mit ihnen zwei Meisterschaften.</li>
+                <li><strong>Roman Weidenfeller:</strong> Spielte von 2002-2018 beim BVB und gewann mit ihnen zahlreiche nationale Erfolge.</li>
+                <li><strong>Marco Reus:</strong> Spielte von 2012-2024 für die Borussen und absolvierte 429 Spiele im Verein.</li>
+                <li><strong>Lars Ricken:</strong> Bekannt für sein legendäres Tor im Champions-League-Finale 1997.</li>
+                <li><strong>Jürgen Kohler:</strong> Spielte von 1995-2002 beim BVB und gewann mit ihnen zwei deutsche Meisterschaften und die Champions League.</li>
+                <li><strong>Stefan Klos:</strong> Spielte von 1990-1998 beim BVB und gewann mit ihnen mehrere nationale Titel, sowie die Champions League und den Weltpokal</li>
+                <li><strong>Karl-Heinz Riedle:</strong> Spielte vom 1993-1997 beim BVB und gewann mit ihnen viele nationale Titel, sowie die Champiosn League 1997. Funfact: Er träumte in der Nacht vor der Champions League Finale, dass er zwei Tore gegen Juve erzielen würde und dies klappte dann auch tatsächlich</li>
+                <li><strong>Julio Cesar:</strong> Spielte von 1994 bis 1999 beim BVB und gewann mit ihnen viele nationale Titel, sowie die Champiosn League und den Weltpokal.</li>
+                <li><strong>Dede:</strong> Spielte von 1998-2011 beim BVB und gewann mit ihnen zweimal die deutsche Meisterschaft.</li>
+                <li><strong>Lothar Emmerich:</strong> Spielte von 1960-1969 beim BVB und gewann mit ihnen einmal die deutsche Meisterschaft, einmal den DFB Pokal einmal den Europapokal der Pokalsieger und zweimal den Westdeutschen Pokal.</li>
+                <li><strong>Jürgen Klopp:</strong> War von 2008-2015 Trainer beim BVB und gewann mit ihnen zweimal den Deutschen Supercup, zweimal die deutsche Meisterschaft und einmal den DFB Pokal.</li>
+                <li><strong>Otmar Hitzfeld:</strong> War von 1991-1997 Trainer beim BVB und gewann mit ihnen zweimal die deutsche Meisterschaft und einmal die Champions League.</li>
+                <li><strong>Matthias Sammer:</strong> Spielte von 1993-1998 beim BVB und war von 2000-2004 Trainer der Borussen. Er ist bis heute der einzigste BVB Spieler der den Ballon D'or (1996) gewann.</li>
+            </ul>
+        </div>
+
+        <h2>Fans und Stadion</h2>
+        <p>
+            Die Fans von Borussia Dortmund sind für ihre Leidenschaft und Treue bekannt und gehören zu den besten der Welt. Das Signal Iduna Park ist mit über 81.000 Plätzen das größte Stadion Deutschlands, berühmt für die “Gelbe Wand”, Europas größte Stehplatztribüne, die für eine beeindruckende Atmosphäre sorgt. Die Fanszene zeichnet sich durch ihre starke Unterstützung und kreative Choreografien aus.
+        </p>
+        <div class="stadium-section">
+            <ul>
+                <li>Signal Iduna Park: über 81.000 Plätze, größtes Stadion Deutschlands</li>
+                <li>„Gelbe Wand“: größte Stehplatztribüne Europas</li>
+                <li>Leidenschaftliche und treue Fans</li>
+                <li>Kreative Choreografien und beeindruckende Stimmung</li>
+                <li>Kultstatus in der Fußballwelt</li>
+            </ul>
+        </div>
+
+        <h2>Kultur und Philosophie</h2>
+        <p>
+            Borussia Dortmund ist nicht nur für seine Erfolge auf dem Spielfeld bekannt, sondern auch für seine starke Vereinsphilosophie. Der Club legt großen Wert auf Nachwuchsförderung und spielt eine zentrale Rolle in der Entwicklung junger Talente. Die "Schwatz-Gelben" sind stolz auf ihren attraktiven, offensiven Spielstil und ihre enge Verbindung zu den Fans. Der Verein ist tief in der Arbeiterkultur Dortmunds verwurzelt und steht für Solidarität, Leidenschaft und den Kampfgeist des Ruhrgebiets.
+        </p>
+
+        <h2>Rivalitäten</h2>
+        <p>
+            Borussia Dortmund hat mehrere große Rivalitäten, die das Leben der Fans prägen. Die größte Rivalität ist mit dem FC Schalke 04, bekannt als das "Revierderby". Es ist eines der heißesten und emotionalsten Derbys in Europa. Eine weitere Rivalität besteht mit dem FC Bayern München, dem Hauptkonkurrenten im Kampf um nationale Titel in den letzten Jahrzehnten. Spiele gegen beide Vereine ziehen Millionen von Zuschauern an und sind voller Leidenschaft, Intensität und Emotionen.
+        </p>
+    </main>
+    
+    <footer>
+        © 2024 Borussia Dortmund Fan-Info
+    </footer>
+</body>
+</html>

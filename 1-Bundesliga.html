@@ -1,0 +1,472 @@
+<!DOCTYPE html>
+<html lang="de">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>1. Bundesliga - Alle Vereine</title>
+    <style>
+        /* Allgemeine Einstellungen für die Liste */
+/* Container für die Team-Liste */
+.team-list {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    padding: 0;
+    margin: 0;
+    list-style-type: none;
+}
+
+/* Stil für jedes Team-Box */
+.team-box {
+    width: 120px;
+    height: 120px;
+    margin: 10px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-color: #f0f0f0;
+    border-radius: 8px;
+    transition: background-color 0.3s ease;
+}
+
+/* Stil für das Logo */
+.team-logo {
+    width: 80%;
+    height: 80%;
+    object-fit: contain;
+}
+
+/* Hover-Effekt für die Kästchen */
+.team-box:hover {
+    background-color: #ddd;
+}
+
+/* Text-Styling */
+.team-box span {
+    font-size: 1rem;
+    font-weight: bold;
+    color: #333;
+}
+        body {
+            font-family: Arial, sans-serif;
+            line-height: 1.6;
+            background-color: #f4f4f4;
+            margin: 0;
+            padding: 0;
+            color: #333;
+        }
+
+/* Navigation-Symbole (Back Arrow & Home Icon) */
+.navigation-icons {
+    position: absolute;
+    top: 10px;
+    left: 10px;
+    display: flex;
+    gap: 15px;
+    z-index: 1000;
+}
+
+.nav-icon {
+    text-decoration: none;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 40px;
+    height: 40px;
+    background-color: #f0f0f0;
+    color: black;
+    font-size: 20px;
+    border-radius: 50%;
+    box-shadow: 0px 2px 4px rgba(0, 0, 0, 0.2);
+    transition: transform 0.3s ease, background-color 0.3s ease, box-shadow 0.3s ease;
+}
+
+.nav-icon:hover {
+    transform: scale(1.2);
+    background-color: #ffcc00;
+    color: white;
+    box-shadow: 0px 4px 6px rgba(0, 0, 0, 0.3);
+}
+
+.nav-icon span {
+    font-size: 24px;
+}
+
+        header {
+            background-color: #ff0000;
+            color: #ffd700;
+            text-align: center;
+            padding: 20px 0;
+            font-size: 2.5rem;
+            font-weight: bold;
+            box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+            position: relative; /* For positioning the arrow and house */
+        }
+
+        /* Positioning the back arrow and home symbol */
+        .header-icons {
+            position: absolute;
+            top: 10px;
+            left: 20px;
+        }
+
+        .header-icons a {
+            color: #ffd700;
+            font-size: 2rem;
+            margin-right: 20px;
+            text-decoration: none;
+        }
+
+        .header-icons a:hover {
+            text-decoration: underline;
+        }
+
+        nav {
+            text-align: center;
+            background-color: #ffd700;
+            padding: 10px 0;
+            border-bottom: 3px solid #000;
+        }
+
+        nav a {
+            color: #007bff; /* Blau für Links */
+            text-decoration: none;
+            font-size: 1.2rem;
+            margin: 0 15px;
+            font-weight: bold;
+        }
+
+        nav a:hover {
+            text-decoration: underline;
+        }
+
+        .content {
+            max-width: 1200px;
+            margin: 20px auto;
+            background-color: #fff;
+            padding: 20px;
+            border-radius: 8px;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+        }
+
+        h1 {
+            text-align: center;
+            font-size: 2.5rem;
+            color: #000;
+        }
+
+        h2 {
+            color: #ff0000;
+            margin-top: 20px;
+            font-size: 2rem;
+        }
+
+        p {
+            font-size: 1.2rem;
+            margin-bottom: 20px;
+        }
+
+        ul {
+            list-style-type: none;
+            padding: 0;
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
+            gap: 15px;
+        }
+
+        ul li {
+    background-color: #f4f4f4;
+    border: 2px solid #ddd;
+    border-radius: 8px;
+    transition: background-color 0.3s, transform 0.3s;
+    position: relative;
+    overflow: hidden; /* Für ein sauberes Hover-Effekt */
+}
+
+ul li a {
+    text-decoration: none;
+    color: inherit;
+    display: flex;
+    flex-direction: column; /* Ermöglicht die vertikale Anordnung von Bild und Text */
+    align-items: center;    /* Zentriert den Inhalt */
+    justify-content: center;
+    height: 100%;           /* Macht das <a> so groß wie das <li> */
+    padding: 10px;          /* Innerer Abstand */
+}
+
+ul li a:hover {
+    text-decoration: none; /* Verhindert Unterstreichung beim Hover */
+    transform: scale(1.05); /* Gleicher Hover-Effekt wie bei <li> */
+    background-color: inherit; /* Übernimmt den Hover-Hintergrund von <li> */
+}
+        /* Hover backgrounds for individual teams */
+        /* Bayern München */
+        li#bayern-munchen:hover {
+            background-color: #ee0035;
+            color: white;
+        }
+
+        /* Borussia Dortmund */
+        li#bvb:hover {
+            background-color: #f9e700;
+            color: black;
+        }
+
+        /* RB Leipzig */
+        li#rb-leipzig:hover {
+            background-color: #de013f;
+            color: white;
+        }
+
+        /* Eintracht Frankfurt */
+        li#eintracht-frankfurt:hover {
+            background-color: #eb595f;
+            color: white;
+        }
+
+        /* SC Freiburg */
+        li#sc-freiburg:hover {
+            background-color: #2c2c2d;
+            color: white;
+        }
+
+        /* Union Berlin */
+        li#union-berlin:hover {
+            background-color: #ec121e;
+            color: white;
+        }
+
+        /* Werder Bremen */
+        li#werder-bremen:hover {
+            background-color: #359d65;
+            color: white;
+        }
+
+        /* Borussia Mönchengladbach */
+        li#borussia-monchengladbach:hover {
+            background-color: #000000;
+            color: white;
+        }
+
+        /* FC Augsburg */
+        li#fc-augsburg:hover {
+            background-color: #ce1012;
+            color: white;
+        }
+
+        /* VfL Wolfsburg */
+        li#vfl-wolfsburg:hover {
+            background-color: #65b42a;
+            color: white;
+        }
+
+        /* 1. FSV Mainz 05 */
+        li#fsv-mainz-05:hover {
+            background-color: #e4010b;
+            color: white;
+        }
+
+        /* VfL Bochum */
+        li#vfl-bochum:hover {
+            background-color: #317bb6;
+            color: white;
+        }
+
+        /* VfB Stuttgart */
+        li#vfb-stuttgart:hover {
+            background-color: #dc324a;
+            color: white;
+        }
+
+        /* Bayer 04 Leverkusen */
+        li#bayer-04-leverkusen:hover {
+            background-color: #e32221;
+            color: white;
+        }
+
+        /* 1. FC Heidenheim */
+        li#fc-heidenheim:hover {
+            background-color: #00387a;
+            color: white;
+        }
+
+        /* TSG Hoffenheim */
+        li#hoffenheim:hover {
+            background-color: #1261b6;
+            color: white;
+        }
+
+        /* FC St. Pauli */
+        li#st-pauli:hover {
+            background-color: #3e2723;
+            color: white;
+        }
+
+        /* Holstein Kiel */
+        li#holstein-kiel:hover {
+            background-color: #00569d;
+            color: white;
+        }
+
+        img {
+            display: block;
+            margin: 15px auto;
+            max-width: 150px;
+            height: auto;
+        }
+
+        footer {
+            text-align: center;
+            padding: 10px 0;
+            background-color: #ff0000;
+            color: #fff;
+            font-size: 0.9rem;
+            position: relative;
+            bottom: 0;
+            width: 100%;
+        }
+
+    </style>
+</head>
+<body>
+
+    <header>
+    <!-- Navigation-Symbole -->
+    <div class="navigation-icons">
+        <!-- Zurück-Pfeil -->
+        <a href="javascript:history.back()" class="nav-icon" title="Zurück">
+            <span>&#8592;</span> <!-- Pfeil nach links -->
+        </a>
+
+        <!-- Haus-Symbol für Startseite -->
+        <a href="../Startseite.html" class="nav-icon" title="Startseite">
+            <span>&#8962;</span> <!-- Haus-Symbol -->
+        </a>
+    </div>
+        <span>1. Bundesliga</span>
+    </header>
+
+    <div class="content">
+        <img src="../Logo Bilder/Bundesliga_logo.png" width="200">
+        
+        <h1>1. Bundesliga</h1>
+        <p>Die 1. Bundesliga ist die höchste Spielklasse in Deutschland. Hier kämpfen die besten Teams um den Titel, darunter Vereine wie Bayern München, Borussia Dortmund und RB Leipzig.</p>
+
+        <h2>Alle Vereine</h2>
+        <ul class="team-list">
+            <!-- Bayern München -->
+            <li id="bayern-munchen" class="team-box">
+                <a href="../Buli Teams/bayern-munchen.html">
+                    <img src="../Bundesliga Logos/FC_Bayern_München_logo_(2024).png" alt="Bayern München Logo" class="team-logo">
+                </a>
+            </li>
+            <!-- Borussia Dortmund -->
+            <li id="bvb" class="team-box">
+                <a href="../Buli Teams/bvb.html">
+                    <img src="../Bundesliga Logos/Borussia_Dortmund_logo.png" alt="Borussia Dortmund Logo" class="team-logo">
+                </a>
+            </li>
+            <!-- RB Leipzig -->
+            <li id="rb-leipzig" class="team-box">
+                <a href="../Buli Teams/rb-leipzig.html">
+                    <img src="../Bundesliga Logos/RB_Leipzig_2014_logo.png" alt="RB Leipzig Logo" class="team-logo">
+                </a>
+            </li>
+            <!-- Eintracht Frankfurt -->
+            <li id="eintracht-frankfurt" class="team-box">
+                <a href="../Buli Teams/eintracht-frankfurt.html">
+                    <img src="../Bundesliga Logos/Eintracht_Frankfurt_Logo.png" alt="Eintracht Frankfurt Logo" class="team-logo">
+                </a>
+            </li>
+            <!-- SC Freiburg -->
+            <li id="sc-freiburg" class="team-box">
+                <a href="sc-freiburg.html">
+                    <img src="../Bundesliga Logos/SC_Freiburg_Logo.png" alt="SC Freiburg Logo" class="team-logo">
+                </a>
+            </li>
+            <!-- Union Berlin -->
+            <li id="union-berlin" class="team-box">
+                <a href="union-berlin.html">
+                    <img src="../Bundesliga Logos/1._FC_Union_Berlin_Logo.png" alt="Union Berlin Logo" class="team-logo">
+                </a>
+            </li>
+            <!-- Werder Bremen -->
+            <li id="werder-bremen" class="team-box">
+                <a href="werder-bremen.html">
+                    <img src="../Regionalliga Nord Logos/SV-Werder-Bremen-Logo.svg.png" alt="Werder Bremen Logo" class="team-logo">
+                </a>
+            </li>
+            <!-- Borussia Mönchengladbach -->
+            <li id="borussia-monchengladbach" class="team-box">
+                <a href="borussia-monchengladbach.html">
+                    <img src="../Bundesliga Logos/Borussia_Mönchengladbach_Logo.png" alt="Borussia Mönchengladbach Logo" class="team-logo">
+                </a>
+            </li>
+            <!-- FC Augsburg -->
+            <li id="fc-augsburg" class="team-box">
+                <a href="fc-augsburg.html">
+                    <img src="../Bundesliga Logos/Logo_FC_Augsburg.png" alt="FC Augsburg Logo" class="team-logo">
+                </a>
+            </li>
+            <!-- VfL Wolfsburg -->
+            <li id="vfl-wolfsburg" class="team-box">
+                <a href="vfl-wolfsburg.html">
+                    <img src="../Bundesliga Logos/Logo-VfL-Wolfsburg.png" alt="VfL Wolfsburg Logo" class="team-logo">
+                </a>
+            </li>
+            <!-- 1. FSV Mainz 05 -->
+            <li id="fsv-mainz-05" class="team-box">
+                <a href="fsv-mainz-05.html">
+                    <img src="../Bundesliga Logos/Logo_Mainz_05.png" alt="FSV Mainz 05 Logo" class="team-logo">
+                </a>
+            </li>
+            <!-- VfL Bochum -->
+            <li id="vfl-bochum" class="team-box">
+                <a href="vfl-bochum.html">
+                    <img src="../Bundesliga Logos/VfL_Bochum_Logo.png" alt="VfL Bochum Logo" class="team-logo">
+                </a>
+            </li>
+            <!-- VfB Stuttgart -->
+            <li id="vfb-stuttgart" class="team-box">
+                <a href="vfb-stuttgart.html">
+                    <img src="../Bundesliga Logos/VfB_Stuttgart_1893_Logo.png" alt="VfB Stuttgart Logo" class="team-logo">
+                </a>
+            </li>
+            <!-- Bayer 04 Leverkusen -->
+            <li id="bayer-04-leverkusen" class="team-box">
+                <a href="bayer-04-leverkusen.html">
+                    <img src="../Bundesliga Logos/Bayer_04_Leverkusen_Logo.png" alt="Bayer 04 Leverkusen Logo" class="team-logo">
+                </a>
+            </li>
+            <!-- 1. FC Heidenheim -->
+            <li id="fc-heidenheim" class="team-box">
+                <a href="fc-heidenheim.html">
+                    <img src="../Bundesliga Logos/1_FC_Heidenheim_Logo.png" alt="FC Heidenheim Logo" class="team-logo">
+                </a>
+            </li>
+            <!-- TSG Hoffenheim -->
+            <li id="hoffenheim" class="team-box">
+                <a href="hoffenheim.html">
+                    <img src="../Bundesliga Logos/TSG_Hoffenheim_Logo.png" alt="TSG Hoffenheim Logo" class="team-logo">
+                </a>
+            </li>
+            <!-- FC St. Pauli -->
+            <li id="st-pauli" class="team-box">
+                <a href="st-pauli.html">
+                    <img src="../Bundesliga Logos/FC_St_Pauli_Logo.png" alt="FC St. Pauli Logo" class="team-logo">
+                </a>
+            </li>
+            <!-- Holstein Kiel -->
+            <li id="holstein-kiel" class="team-box">
+                <a href="holstein-kiel.html">
+                    <img src="../Regionalliga Nord Logos/Holstein_Kiel_Logo.png" alt="Holstein Kiel Logo" class="team-logo">
+                </a>
+            </li>
+        </ul>
+    </div>
+
+    <footer>
+        <p>&copy; 2024 Alle Rechte vorbehalten</p>
+    </footer>
+</body>
+</html>

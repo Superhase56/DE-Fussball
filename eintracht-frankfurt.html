@@ -1,0 +1,215 @@
+<!DOCTYPE html>
+<html lang="de">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Eintracht Frankfurt</title>
+    <style>
+        body {
+            font-family: 'Arial', sans-serif;
+            margin: 0;
+            padding: 0;
+            background-color: #f7f7f7;
+            color: #333;
+            line-height: 1.6;
+        }
+
+        /* Header */
+        header {
+            background-color: #e30613;
+            color: white;
+            padding: 20px;
+            text-align: center;
+            font-size: 2.5rem;
+            font-weight: bold;
+            position: relative;
+        }
+
+        header img {
+            width: 50px;
+            margin-right: 10px;
+            vertical-align: middle;
+        }
+
+        /* Navigation Icons */
+        .navigation-icons {
+            position: absolute;
+            top: 20px;
+            left: 20px;
+            display: flex;
+            gap: 15px;
+            z-index: 1000;
+        }
+
+        .nav-icon {
+            text-decoration: none;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            width: 40px;
+            height: 40px;
+            background-color: #fff;
+            color: black;
+            font-size: 20px;
+            border-radius: 50%;
+            box-shadow: 0px 2px 4px rgba(0, 0, 0, 0.2);
+            transition: transform 0.3s ease, background-color 0.3s ease, box-shadow 0.3s ease;
+        }
+
+        .nav-icon:hover {
+            transform: scale(1.2);
+            background-color: #e30613;
+            color: white;
+            box-shadow: 0px 4px 6px rgba(0, 0, 0, 0.3);
+        }
+
+        .nav-icon span {
+            font-size: 24px;
+        }
+
+        /* Main Content */
+        main {
+            max-width: 960px;
+            margin: 40px auto;
+            background-color: white;
+            padding: 30px;
+            border-radius: 10px;
+            box-shadow: 0 0 15px rgba(0, 0, 0, 0.1);
+        }
+
+        h1, h2 {
+            font-size: 2rem;
+            color: #1a1a1a;
+            margin-bottom: 15px;
+        }
+
+        ul {
+            list-style-type: disc;
+            padding-left: 30px;
+            margin-bottom: 20px;
+        }
+
+        ul li {
+            margin-bottom: 8px;
+        }
+
+        .legend-section ul {
+            list-style-type: none;
+            padding-left: 0;
+        }
+
+        .legend-section li {
+            background: #f9f9f9;
+            margin: 10px 0;
+            padding: 10px;
+            border-radius: 5px;
+        }
+
+        .stadium-section ul {
+            padding-left: 20px;
+            list-style-type: circle;
+        }
+
+        /* Footer */
+        footer {
+            background-color: #e30613;
+            color: white;
+            text-align: center;
+            padding: 10px;
+            font-size: 1rem;
+        }
+
+        /* Styling Links */
+        a {
+            color: #e30613;
+            text-decoration: none;
+        }
+
+        a:hover {
+            text-decoration: underline;
+        }
+
+    </style>
+</head>
+<body>
+
+    <!-- Navigation Icons -->
+    <div class="navigation-icons">
+        <a href="javascript:history.back()" class="nav-icon" title="Zurück">
+            <span>&#8592;</span>
+        </a>
+        <a href="../Startseite.html" class="nav-icon" title="Startseite">
+            <span>&#8962;</span>
+        </a>
+    </div>
+
+    <header>
+        <img src="../Bundesliga Logos/Eintracht_Frankfurt_logo.png" alt="Eintracht Frankfurt Logo">
+        Eintracht Frankfurt
+    </header>
+
+    <main>
+        <h2>Allgemeine Fakten</h2>
+        <ul>
+            <li><strong>Gründung:</strong> 08. März 1899</li>
+            <li><strong>Stadt:</strong> Frankfurt am Main</li>
+            <li><strong>Stadion:</strong> Deutsche Bank Park</li>
+            <li><strong>Mitglieder:</strong> Über 125.000</li>
+            <li><strong>Farben:</strong> Schwarz-Weiß-Rot</li>
+            <li><strong>Weitere Sportarten:</strong> Leichtathletik, Basketball, Rugby</li>
+        </ul>
+
+        <h2>Geschichte</h2>
+        <p>
+            Eintracht Frankfurt gehört zu den traditionsreichsten Fußballvereinen Deutschlands. 1959 holte die Eintracht die Deutsche Meisterschaft, aber die größten internationalen Erfolge kamen später. Der Gewinn der UEFA Europa League 2022 brachte den Verein auf die europäische Fußballkarte zurück. Die Fans von Eintracht Frankfurt sind für ihre Leidenschaft bekannt, insbesondere die beeindruckenden Choreografien und die unermüdliche Unterstützung im Deutsche Bank Park.
+        </p>
+
+        <h2>Erfolge</h2>
+        <ul>
+            <li><strong>Deutscher Meister:</strong> 1 Mal (1958/59)</li>
+            <li><strong>DFB-Pokal:</strong> 5 Mal (2017/18, 1987/88, 1980/81, 1974/75, 1973/74)</li>
+            <li><strong>UEFA Europa League:</strong> 1 Mal (2021/2022)</li>
+            <li><strong>UEFA Cup Sieger:</strong> 1 Mal (1979/80)</li>
+            <li><strong>Intertoto-Cup Sieger:</strong> 1 Mal (1966/67)</li>
+        </ul>
+
+        <h2>Legenden</h2>
+        <div class="legend-section">
+            <ul>
+                <li><strong>Jürgen Grabowski:</strong> Einer der größten Spieler in der Geschichte des Vereins und wichtiger Teil des Teams in den 1970er Jahren.</li>
+                <li><strong>Bernd Hölzenbein:</strong> Legendärer Stürmer und Weltmeister von 1974, der für seine Tore und Technik gefeiert wird.</li>
+                <li><strong>Alexander Schur:</strong> Vereinsikone, bekannt für seinen unermüdlichen Einsatz und seine Führungsqualitäten.</li>
+                <li><strong>Kevin Trapp:</strong> Torwart, der entscheidend zum Gewinn der Europa League 2022 beitrug.</li>
+            </ul>
+        </div>
+
+        <h2>Fans und Stadion</h2>
+        <p>
+            Der Deutsche Bank Park, früher bekannt als Waldstadion, bietet Platz für über 50.000 Zuschauer und ist bekannt für seine beeindruckende Atmosphäre. Die Eintracht-Fanszene zählt zu den leidenschaftlichsten in Deutschland, mit kreativen Choreografien und unermüdlicher Unterstützung.
+        </p>
+
+        <div class="stadium-section">
+            <ul>
+                <li>Kapazität: Über 50.000 Plätze</li>
+                <li>Choreografien und beeindruckende Stimmung</li>
+                <li>Zentrale Lage im Herzen von Europa</li>
+            </ul>
+        </div>
+
+        <h2>Kultur und Philosophie</h2>
+        <p>
+            Eintracht Frankfurt steht für Tradition, Vielfalt und Bodenständigkeit. Der Verein hat eine enge Bindung zur Stadt Frankfurt und eine starke Gemeinschaft, die weit über die Stadtgrenzen hinaus reicht. Die Fans machen den Verein zu einer einzigartigen Marke in Deutschland und Europa.
+        </p>
+
+        <h2>Rivalitäten</h2>
+        <p>
+            Die Rivalität mit dem 1. FSV Mainz 05 gehört zu den intensivsten im deutschen Fußball. Auch die Duelle gegen den FC Schalke 04 und Bayer Leverkusen sind für Eintracht-Fans von großer Bedeutung.
+        </p>
+    </main>
+
+    <footer>
+        © 2024 Eintracht Frankfurt Fan-Info
+    </footer>
+
+</body>
+</html>

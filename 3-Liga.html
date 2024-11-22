@@ -1,0 +1,456 @@
+<!DOCTYPE html>
+<html lang="de">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>3. Liga</title>
+    <style>
+        /* Container für die Team-Liste */
+        .team-list {
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: center;
+            padding: 0;
+            margin: 0;
+            list-style-type: none;
+        }
+
+        /* Stil für jedes Team-Box */
+        .team-box {
+            width: 120px;
+            height: 120px;
+            margin: 10px;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            background-color: #f0f0f0;
+            border-radius: 8px;
+            transition: background-color 0.3s ease;
+            cursor: pointer; /* Zeigt an, dass das Box klickbar ist */
+        }
+
+        /* Stil für das Logo */
+        .team-logo {
+            width: 80%;
+            height: 80%;
+            object-fit: contain;
+        }
+
+        /* Hover-Effekt für die Kästchen */
+        .team-box:hover {
+            background-color: #ddd;
+        }
+
+        body {
+            font-family: Arial, sans-serif;
+            line-height: 1.6;
+            background-color: #f4f4f4;
+            margin: 0;
+            padding: 0;
+            color: #333;
+        }
+
+        header {
+            background-color: #ff0000;
+            color: #ffd700;
+            text-align: center;
+            padding: 20px 0;
+            font-size: 2.5rem;
+            font-weight: bold;
+            box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+            position: relative;
+        }
+
+        /* Navigation-Symbole (Back Arrow & Home Icon) */
+        .navigation-icons {
+            position: absolute;
+            top: 10px;
+            left: 10px;
+            display: flex;
+            gap: 15px;
+            z-index: 1000;
+        }
+
+        .nav-icon {
+            text-decoration: none;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            width: 40px;
+            height: 40px;
+            background-color: #f0f0f0;
+            color: black;
+            font-size: 20px;
+            border-radius: 50%;
+            box-shadow: 0px 2px 4px rgba(0, 0, 0, 0.2);
+            transition: transform 0.3s ease, background-color 0.3s ease, box-shadow 0.3s ease;
+        }
+
+        .nav-icon:hover {
+            transform: scale(1.2);
+            background-color: #ffcc00;
+            color: white;
+            box-shadow: 0px 4px 6px rgba(0, 0, 0, 0.3);
+        }
+
+        .nav-icon span {
+            font-size: 24px;
+        }
+
+        nav {
+            text-align: center;
+            background-color: #ffd700;
+            padding: 10px 0;
+            border-bottom: 3px solid #000;
+        }
+
+        nav a {
+            color: #007bff;
+            text-decoration: none;
+            font-size: 1.2rem;
+            margin: 0 15px;
+            font-weight: bold;
+        }
+
+        nav a:hover {
+            text-decoration: underline;
+        }
+
+        .content {
+            max-width: 1200px;
+            margin: 20px auto;
+            background-color: #fff;
+            padding: 20px;
+            border-radius: 8px;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+        }
+
+        h1 {
+            text-align: center;
+            font-size: 2.5rem;
+            color: #000;
+        }
+
+        h2 {
+            color: #ff0000;
+            margin-top: 20px;
+            font-size: 2rem;
+        }
+
+        p {
+            font-size: 1.2rem;
+            margin-bottom: 20px;
+        }
+
+        ul {
+            list-style-type: none;
+            padding: 0;
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
+            gap: 15px;
+        }
+
+        ul li {
+            background-color: #f4f4f4;
+            border: 2px solid #ddd;
+            border-radius: 8px;
+            padding: 10px;
+            text-align: center;
+            transition: background-color 0.3s, transform 0.3s;
+            position: relative;
+        }
+
+        ul li a {
+            text-decoration: none;
+            color: hsl(211, 100%, 50%);
+            font-size: 1.1rem;
+            font-weight: bold;
+            display: block;
+            margin-top: 10px;
+        }
+
+        ul li a:hover {
+            text-decoration: underline;
+        }
+
+        /* Hover backgrounds for individual teams */
+        li#sv-sandhausen:hover {
+            background-color: #000000;
+            color: white;
+        }
+
+        li#arminia-bielefeld:hover {
+            background-color: #1e4684;
+            color: white;
+        }
+
+        li#dynamo-dresden:hover {
+            background-color: #ffcc00;
+            color: black;
+        }
+
+        li#fc-saarbrucken:hover {
+            background-color: #0c5896;
+            color: white;
+        }
+
+        li#energie-cottbus:hover {
+            background-color: #e10000;
+            color: white;
+        }
+
+        li#erzgebirge-aue:hover {
+            background-color: #4f2b74;
+            color: white;
+        }
+
+        li#sv-wehen-wiesbaden:hover {
+            background-color: #9b0a0a;
+            color: black;
+        }
+
+        li#fc-ingolstadt-04:hover {
+            background-color: #fc4c44;
+            color: white;
+        }
+
+        li#fc-viktoria-koln:hover {
+            background-color: #941111;
+            color: white;
+        }
+
+        li#tsv-1860-munchen:hover {
+            background-color: #008f30;
+            color: white;
+        }
+
+        li#borussia-dortmund-ii:hover {
+            background-color: #f9e700;
+            color: black;
+        }
+
+        li#alemannia-aachen:hover {
+            background-color: #f7d600;
+            color: black;
+        }
+
+        li#sv-waldhof-mannheim:hover {
+            background-color: #003b5c;
+            color: white;
+        }
+
+        li#sc-verl:hover {
+            background-color: #000000;
+            color: white;
+        }
+
+        li#hansa-rostock:hover {
+            background-color: #003d6a;
+            color: white;
+        }
+
+        li#rot-weiss-essen:hover {
+            background-color: #e4002b;
+            color: white;
+        }
+
+        li#vfb-stuttgart-ii:hover {
+            background-color: #dc324a;
+            color: white;
+        }
+
+        li#hannover-96-ii:hover {
+            background-color: #006e2f;
+            color: white;
+        }
+
+        li#spvgg-unterhaching:hover {
+            background-color: #0f5078;
+            color: white;
+        }
+
+        li#vfl-osnabruck:hover {
+            background-color: #60006d;
+            color: white;
+        }
+
+        img {
+            display: block;
+            margin: 15px auto;
+            max-width: 150px;
+            height: auto;
+        }
+
+        footer {
+            text-align: center;
+            padding: 10px 0;
+            background-color: #ff0000;
+            color: #fff;
+            font-size: 0.9rem;
+            position: relative;
+            bottom: 0;
+            width: 100%;
+        }
+
+    </style>
+</head>
+<body>
+
+    <header>
+        <div class="navigation-icons">
+            <a href="javascript:history.back()" class="nav-icon" title="Zurück">
+                <span>&#8592;</span>
+            </a>
+            <a href="../Startseite.html" class="nav-icon" title="Startseite">
+                <span>&#8962;</span>
+            </a>
+        </div>
+        <span>3. Liga</span>
+    </header>
+
+    <div class="content">
+        <img src="../Logo Bilder/3._Liga_logo.png" width="200">
+        <h1>3. Liga</h1>
+        <p>Die 3. Liga bildet die dritte Stufe des deutschen Ligensystems und dient als Bindeglied zwischen den Profimannschaften der 2. Bundesliga und den Amateuren. Hier spielen 20 Vereine, und es geht sowohl um den Aufstieg in die 2. Bundesliga als auch um den Abstieg in die Regionalligen.</p>
+
+        <h2>Teams der 3. Liga</h2>
+        <ul class="team-list">
+            <a href="team-link1.html">
+                <li class="team-box" id="sv-sandhausen">
+                    <img src="../3. Liga Logos/SV_Sandhausen.png" class="team-logo" alt="SV Sandhausen">
+                </li>
+            </a>
+            <a href="team-link2.html">
+                <li class="team-box" id="arminia-bielefeld">
+                    <img src="../3. Liga Logos/Arminia_Bielefeld_Logo_2021–.png" class="team-logo" alt="Arminia Bielefeld">
+                </li>
+            </a>
+            <a href="team-link3.html">
+                <li class="team-box" id="dynamo-dresden">
+                    <img src="../3. Liga Logos/Logo_SG_Dynamo_Dresden_neu.png" class="team-logo" alt="Dynamo Dresden">
+                </li>
+            </a>
+            <a href="team-link4.html">
+                <li class="team-box" id="fc-saarbrucken">
+                    <img src="../3. Liga Logos/1._FC_Saarbrücken.png" class="team-logo" alt="FC Saarbrücken">
+                </li>
+            </a>
+<!-- Energie Cottbus -->
+<a href="../3 Liga Teams/energie-cottbus.html">
+    <li id="energie-cottbus" class="team-box">
+        <img src="../3. Liga Logos/Logo_Energie_Cottbus.png" alt="Energie Cottbus Logo" class="team-logo">
+    </li>
+</a>
+
+<!-- Erzgebirge Aue -->
+<a href="../Buli Teams/erzgebirge-aue.html">
+    <li id="erzgebirge-aue" class="team-box">
+        <img src="../3. Liga Logos/Fc_erzgebirge_aue.png" alt="Erzgebirge Aue Logo" class="team-logo">
+    </li>
+</a>
+
+<!-- SV Wehen Wiesbaden -->
+<a href="../Buli Teams/sv-wehen-wiesbaden.html">
+    <li id="sv-wehen-wiesbaden" class="team-box">
+        <img src="../3. Liga Logos/SV_Wehen_Wiesbaden_logo.png" alt="SV Wehen Wiesbaden Logo" class="team-logo">
+    </li>
+</a>
+
+<!-- FC Ingolstadt 04 -->
+<a href="../Buli Teams/fc-ingolstadt-04.html">
+    <li id="fc-ingolstadt-04" class="team-box">
+        <img src="../3. Liga Logos/FC-Ingolstadt_logo.png" alt="FC Ingolstadt 04 Logo" class="team-logo">
+    </li>
+</a>
+
+<!-- FC Viktoria Köln -->
+<a href="../Buli Teams/fc-viktoria-koln.html">
+    <li id="fc-viktoria-koln" class="team-box">
+        <img src="../3. Liga Logos/FC_Viktoria_Köln_1904_Logo.png" alt="FC Viktoria Köln Logo" class="team-logo">
+    </li>
+</a>
+
+<!-- TSV 1860 München -->
+<a href="../Buli Teams/tsv-1860-munchen.html">
+    <li id="tsv-1860-munchen" class="team-box">
+        <img src="../3. Liga Logos/TSV_1860_München.png" alt="TSV 1860 München Logo" class="team-logo">
+    </li>
+</a>
+
+<!-- Borussia Dortmund II -->
+<a href="../Buli Teams/borussia-dortmund-ii.html">
+    <li id="borussia-dortmund-ii" class="team-box">
+        <img src="../Bundesliga Logos/Borussia_Dortmund_logo.png" alt="Borussia Dortmund II Logo" class="team-logo">
+    </li>
+</a>
+
+<!-- Alemannia Aachen -->
+<a href="../Buli Teams/alemannia-aachen.html">
+    <li id="alemannia-aachen" class="team-box">
+        <img src="../3. Liga Logos/Alemannia_Aachen_2010.png" alt="Alemannia Aachen Logo" class="team-logo">
+    </li>
+</a>
+
+<!-- SV Waldhof Mannheim -->
+<a href="../Buli Teams/sv-waldhof-mannheim.html">
+    <li id="sv-waldhof-mannheim" class="team-box">
+        <img src="../3. Liga Logos/Svwaldhof.png" alt="SV Waldhof Mannheim Logo" class="team-logo">
+    </li>
+</a>
+
+<!-- SC Verl -->
+<a href="../Buli Teams/sc-verl.html">
+    <li id="sc-verl" class="team-box">
+        <img src="../3. Liga Logos/SC_Verl_Logo.png" alt="SC Verl Logo" class="team-logo">
+    </li>
+</a>
+
+<!-- Hansa Rostock -->
+<a href="../Buli Teams/hansa-rostock.html">
+    <li id="hansa-rostock" class="team-box">
+        <img src="../3. Liga Logos/F.C._Hansa_Rostock_Logo.png" alt="Hansa Rostock Logo" class="team-logo">
+    </li>
+</a>
+
+<!-- Rot-Weiss Essen -->
+<a href="../Buli Teams/rot-weiss-essen.html">
+    <li id="rot-weiss-essen" class="team-box">
+        <img src="../3. Liga Logos/Logo_Rot-Weiss_Essen.png" alt="Rot-Weiss Essen Logo" class="team-logo">
+    </li>
+</a>
+
+<!-- VfB Stuttgart II -->
+<a href="../Buli Teams/vfb-stuttgart-ii.html">
+    <li id="vfb-stuttgart-ii" class="team-box">
+        <img src="../Bundesliga Logos/VfB_Stuttgart_1893_Logo.png" alt="VfB Stuttgart II Logo" class="team-logo">
+    </li>
+</a>
+
+<!-- Hannover 96 II -->
+<a href="../Buli Teams/hannover-96-ii.html">
+    <li id="hannover-96-ii" class="team-box">
+        <img src="../2. Bundesliga Logos/Hannover_96_Logo.png" alt="Hannover 96 II Logo" class="team-logo">
+    </li>
+</a>
+
+<!-- SpVgg Unterhaching -->
+<a href="../Buli Teams/spvgg-unterhaching.html">
+    <li id="spvgg-unterhaching" class="team-box">
+        <img src="../3. Liga Logos/SpVgg_Unterhaching_Logo_2012.png" alt="SpVgg Unterhaching Logo" class="team-logo">
+    </li>
+</a>
+
+<!-- VfL Osnabrück -->
+<a href="../Buli Teams/vfl-osnabruck.html">
+    <li id="vfl-osnabruck" class="team-box">
+        <img src="../3. Liga Logos/VfL_Osnabrueck_Logo_2021–.png" alt="VfL Osnabrück Logo" class="team-logo">
+    </li>
+</a>
+        </ul>
+    </div>
+
+    <footer>
+        <p>&copy; 2024 Alle Rechte vorbehalten</p>
+    </footer>
+</body>
+</html>

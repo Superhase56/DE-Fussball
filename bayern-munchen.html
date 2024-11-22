@@ -1,0 +1,220 @@
+<!DOCTYPE html>
+<html lang="de">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>FC Bayern München</title>
+    <style>
+        body {
+            font-family: 'Arial', sans-serif;
+            margin: 0;
+            padding: 0;
+            background-color: #f7f7f7;
+            color: #333;
+            line-height: 1.6;
+        }
+
+
+
+        /* Header */
+        header {
+            background-color: #e30b17;
+            color: white;
+            padding: 20px;
+            text-align: center;
+            font-size: 2.5rem;
+            font-weight: bold;
+            position: relative;  /* Damit die Navigation-Icons innerhalb des Headers positioniert werden */
+        }
+
+        header img {
+            width: 50px;
+            margin-right: 10px;
+            vertical-align: middle;
+        }
+
+        /* Navigation Icons */
+        .navigation-icons {
+            position: absolute; /* Positioniert die Icons absolut im Header */
+            top: 20px;   /* Abstand zum oberen Rand des Headers */
+            left: 20px;  /* Abstand zum linken Rand des Headers */
+            display: flex;
+            gap: 15px;
+            z-index: 1000;    /* Sicherstellen, dass sie über anderen Elementen im Header liegen */
+        }
+
+        .nav-icon {
+            text-decoration: none;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            width: 40px;
+            height: 40px;
+            background-color: #fff;
+            color: black;
+            font-size: 20px;
+            border-radius: 50%;
+            box-shadow: 0px 2px 4px rgba(0, 0, 0, 0.2);
+            transition: transform 0.3s ease, background-color 0.3s ease, box-shadow 0.3s ease;
+        }
+
+        .nav-icon:hover {
+            transform: scale(1.2);
+            background-color: #ffcc00;
+            color: white;
+            box-shadow: 0px 4px 6px rgba(0, 0, 0, 0.3);
+        }
+
+        .nav-icon span {
+            font-size: 24px;
+        }
+
+        /* Main Content */
+        main {
+            max-width: 960px;
+            margin: 40px auto;
+            background-color: white;
+            padding: 30px;
+            border-radius: 10px;
+            box-shadow: 0 0 15px rgba(0, 0, 0, 0.1);
+        }
+
+        h1, h2 {
+            font-size: 2rem;
+            color: #1a1a1a;
+            margin-bottom: 15px;
+        }
+
+        ul {
+            list-style-type: disc;
+            padding-left: 30px;
+            margin-bottom: 20px;
+        }
+
+        ul li {
+            margin-bottom: 8px;
+        }
+
+        .legend-section ul {
+            list-style-type: none;
+            padding-left: 0;
+        }
+
+        .legend-section li {
+            background: #f9f9f9;
+            margin: 10px 0;
+            padding: 10px;
+            border-radius: 5px;
+        }
+
+        .stadium-section ul {
+            padding-left: 20px;
+            list-style-type: circle;
+        }
+
+        /* Footer */
+        footer {
+            background-color: #e30b17;
+            color: white;
+            text-align: center;
+            padding: 10px;
+            font-size: 1rem;
+        }
+
+        /* Styling Links */
+        a {
+            color: #e30b17;
+            text-decoration: none;
+        }
+
+        a:hover {
+            text-decoration: underline;
+        }
+
+    </style>
+</head>
+<body>
+
+    <!-- Navigation Icons -->
+    <div class="navigation-icons">
+        <a href="javascript:history.back()" class="nav-icon" title="Zurück">
+            <span>&#8592;</span>
+        </a>
+        <a href="../Startseite.html" class="nav-icon" title="Startseite">
+            <span>&#8962;</span>
+        </a>
+    </div>
+
+    <header>
+        <img src="../Bundesliga Logos/FC_Bayern_München_logo_(2024).png" alt="FC Bayern München Logo">
+        FC Bayern München
+    </header>
+
+    <main>
+        <h2>Allgemeine Fakten</h2>
+        <ul>
+            <li><strong>Gründung:</strong> 27.02.1900</li>
+            <li><strong>Stadt:</strong> München</li>
+            <li><strong>Stadion:</strong> Allianz Arena</li>
+            <li><strong>Mitglieder:</strong> Über 290.000</li>
+            <li><strong>Farben:</strong> Rot-Weiß</li>
+            <li><strong>Weitere Sportarten:</strong> Basketball, Eishockey, Handball</li>
+        </ul>
+
+        <h2>Geschichte</h2>
+        <p>
+            Der FC Bayern München wurde 1900 gegründet und hat sich zu einem der erfolgreichsten Fußballvereine weltweit entwickelt. Der Verein hat zahlreiche nationale und internationale Titel gewonnen, darunter mehrfach die UEFA Champions League. Bayern München ist bekannt für seine dominierende Rolle in der Bundesliga und hat den Ruf, kontinuierlich auf höchstem Niveau zu spielen. Die Allianz Arena ist das Zuhause des Vereins und bietet Platz für über 75.000 Zuschauer.
+        </p>
+
+        <h2>Erfolge</h2>
+        <ul>
+            <li><strong>Deutscher Meister:</strong> 33 Mal</li>
+            <li><strong>Deutscher Pokalsieger:</strong> 20 Mal</li>
+            <li><strong>Champions League:</strong> 3 Mal</li>
+            <li><strong>Europapokal der Landesmeister:</strong> 3 Mal</li>
+            <li><strong>FIFA Klub-Weltmeister:</strong> 2 Mal</li>
+            <li><strong>Weltpokalsieger:</strong> 2 Mal</li>
+            <li><strong>UEFA Cup Sieger:</strong> 1 Mal</li>
+        </ul>
+
+        <h2>Legenden</h2>
+        <div class="legend-section">
+            <ul>
+                <li><strong>Franz Beckenbauer:</strong> Der "Kaiser" war sowohl als Spieler als auch als Trainer erfolgreich und führte Bayern zu zahlreichen Titeln.</li>
+                <li><strong>Gerd Müller:</strong> Der legendäre Stürmer erzielte unzählige Tore und führte Bayern zu vielen Erfolgen, darunter das erste europäische Double 1974.</li>
+                <li><strong>Oliver Kahn:</strong> Der ikonische Torhüter und Teamkapitän führte Bayern zu zahlreichen Meisterschaften und Champions League Titeln.</li>
+                <li><strong>Uli Hoeneß:</strong> Ein prägender Spieler und Präsident, der die Geschichte des Vereins nachhaltig beeinflusste.</li>
+                <li><strong>Lothar Matthäus:</strong> Weltmeister und mehrfacher Champions League-Sieger mit Bayern.</li>
+            </ul>
+        </div>
+
+        <h2>Fans und Stadion</h2>
+        <p>
+            Die Allianz Arena ist bekannt für ihre beeindruckende Architektur und die leuchtende Außenfassade, die je nach Anlass in verschiedenen Farben erstrahlt. Die Fans von Bayern München sind weltweit für ihre Leidenschaft und Treue zum Verein bekannt.
+        </p>
+
+        <div class="stadium-section">
+            <ul>
+                <li>Über 75.000 Plätze</li>
+                <li>Leuchtende Außenfassade in verschiedenen Farben</li>
+                <li>Berühmte und leidenschaftliche Fanszene</li>
+            </ul>
+        </div>
+
+        <h2>Kultur und Philosophie</h2>
+        <p>
+            Bayern München verfolgt eine klare Philosophie des Erfolgs und der Nachhaltigkeit. Der Verein setzt auf eine professionelle Struktur, Jugendförderung und langfristige Perspektive. Trotz seiner weltweiten Popularität bleibt der Verein seinen bayerischen Wurzeln treu.
+        </p>
+
+        <h2>Rivalitäten</h2>
+        <p>
+            Besonders intensiv ist die Rivalität mit Borussia Dortmund, bekannt als das "Deutsche Clásico". Auch das Duell gegen den 1. FC Nürnberg gehört zu den traditionsreichsten Rivalitäten des Vereins.
+        </p>
+    </main>
+
+    <footer>
+        © 2024 FC Bayern München Fan-Info
+    </footer>
+
+</body>
+</html>

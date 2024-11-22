@@ -1,0 +1,363 @@
+<!DOCTYPE html>
+<html lang="de">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Kreisligen</title>
+    <style>
+        /* Grundstil */
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+            background: linear-gradient(to bottom, #f0f0f0, #d6d6d6);
+            color: #333;
+            line-height: 1.6;
+        }
+
+        /* Kopfzeile */
+        h1 {
+            text-align: center;
+            font-size: 36px;
+            margin-top: 30px;
+            color: #cc0000;
+            text-shadow: 2px 2px 5px rgba(0, 0, 0, 0.2);
+        }
+
+        /* Abschnitt */
+        p {
+            text-align: center;
+            font-size: 20px;
+            font-weight: bold;
+            margin-top: 20px;
+            color: #444;
+        }
+
+        /* Liste */
+        ul {
+            margin: 30px auto;
+            padding: 20px;
+            max-width: 800px;
+            background-color: white;
+            border-radius: 10px;
+            box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.2);
+            list-style-type: none;
+        }
+
+        ul li {
+            font-size: 18px;
+            margin: 10px 0;
+            padding: 10px;
+            border-bottom: 1px solid #ddd;
+            transition: background-color 0.3s ease, transform 0.2s ease;
+        }
+
+        ul li:hover {
+            background-color: #ffe0e0;
+            transform: scale(1.02);
+        }
+
+        /* Symbole */
+        .navigation-icons {
+            position: fixed;
+            top: 10px;
+            left: 10px;
+            display: flex;
+            gap: 10px;
+            z-index: 1000;
+        }
+
+        .nav-icon {
+            text-decoration: none;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            width: 40px;
+            height: 40px;
+            background-color: #f0f0f0;
+            color: black;
+            font-size: 20px;
+            border-radius: 50%;
+            box-shadow: 0px 2px 4px rgba(0, 0, 0, 0.2);
+            transition: transform 0.3s ease, background-color 0.3s ease, box-shadow 0.3s ease;
+        }
+
+        .nav-icon:hover {
+            transform: scale(1.2);
+            background-color: #ffcc00;
+            color: white;
+            box-shadow: 0px 4px 6px rgba(0, 0, 0, 0.3);
+        }
+
+        /* Stil für Kreisliga-Abschnitte */
+        .section {
+            margin-top: 50px;
+        }
+
+        .section p {
+            font-size: 24px;
+            font-weight: bold;
+            color: #0056b3;
+            margin-bottom: 20px;
+        }
+
+        ul {
+            margin-top: 10px;
+        }
+    </style>
+</head>
+<body>
+    <!-- Symbole für Navigation -->
+    <div class="navigation-icons">
+        <!-- Zurück-Pfeil -->
+        <a href="javascript:history.back()" class="nav-icon" title="Zurück">
+            <span>&#8592;</span> <!-- Pfeil nach links -->
+        </a>
+
+        <!-- Haus-Symbol -->
+        <a href="../Startseite.html" class="nav-icon" title="Startseite">
+            <span>&#8962;</span> <!-- Haus-Symbol -->
+        </a>
+    </div>
+
+    <!-- Inhalt der Seite -->
+    <h1>Kreisligen</h1>
+
+    <div class="section">
+        <p>Kreisligen in Mecklenburg-Vorpommern</p>
+        <ul>
+            <li> Kreisliga Mecklenburgische Seenplatte (Staffel Nord, Staffel Süd)</li>
+            <li> Kreisliga Schwerin-Nordwestmecklenburg (Staffel Nord, Staffel Süd)</li>
+            <li> Kreisliga Ludwigslust-Parchim (Staffel West, Staffel Ost)</li>
+            <li> Kreisliga Rostock-Mittleres Mecklenburg (Staffel Nord, Staffel Süd)</li>
+            <li> Kreisliga Vorpommern-Rügen (Staffel Nord, Staffel Süd)</li>
+            <li> Kreisliga Vorpommern-Greifswald (Staffel Nord, Staffel Süd)</li>
+            <li> Kreisliga Nordwestmecklenburg</li>
+            <li> Kreisliga Westmecklenburg</li>
+        </ul>
+    </div>
+
+    <div class="section">
+        <p>Kreisligen in Brandenburg</p>
+        <ul>
+            <li> Kreisliga Havelland (Staffel Nord, Staffel Süd)</li>
+            <li> Kreisliga Oberhavel-Barnim (Staffel West, Staffel Ost)</li>
+            <li> Kreisliga Prignitz-Ruppin</li>
+            <li> Kreisliga Elbe-Elster (Staffel Nord, Staffel Süd)</li>
+            <li> Kreisliga Spree-Neiße</li>
+            <li> Kreisliga Dahme/Fläming (Staffel Nord, Staffel Süd)</li>
+            <li> Kreisliga Oderland (Staffel Nord, Staffel Süd)</li>
+            <li> Kreisliga Uckermark</li>
+        </ul>
+    </div>
+
+
+        <div class="section">
+            <p class="section-title">Kreisligen in Berlin</p>
+            <ul>
+                <li> Kreisliga A (verschiedene Staffeln, z.B. Staffel 1 bis 6)</li>
+                <li> Kreisliga B (verschiedene Staffeln, z.B. Staffel 1 bis 10)</li>
+                <li> Kreisliga C (verschiedene Staffeln, z.B. Staffel 1 bis 14)</li>
+                <li> Kreisliga D (verschiedene Staffeln, z.B. Staffel 1 bis 12)</li>
+            </ul>
+        </div>
+
+        <div class="section">
+            <p class="section-title">Kreisligen in Sachsen</p>
+            <ul>
+                <li> Kreisliga Dresden (Staffel 1, Staffel 2, Staffel 3)</li>
+                <li> Kreisliga Leipzig (Staffel 1, Staffel 2, Staffel 3)</li>
+                <li> Kreisliga Chemnitz (Staffel 1, Staffel 2)</li>
+                <li> Kreisliga Zwickau (Staffel 1, Staffel 2)</li>
+                <li> Kreisliga Erzgebirge (Staffel 1, Staffel 2)</li>
+                <li> Kreisliga Vogtland (Staffel 1, Staffel 2)</li>
+            </ul>
+        </div>
+	
+	<div class="section">
+		<p>Kreisligen in Sachsen-Anhalt</p>
+		<ul>
+			<li> Kreisliga Altmark West</li>
+			<li> Kreisliga Altmark Ost</li>
+			<li> Kreisliga Börde</li>
+			<li> Kreisliga Harz</li>
+			<li> Kreisliga Jerichower Land</li>
+			<li> Kreisliga Mansfeld-Südharz</li>
+		</ul>
+	</div>
+	
+	<div class="section">
+		<p>Kreisligen in Bayern</p>
+		<ul>
+			<li> Kreisliga Augsburg</li>
+			<li> Kreisliga Bad Kissingen</li>
+			<li> Kreisliga Bayreuth</li>
+			<li> Kreisliga Coburg</li>
+			<li> Kreisliga Donau</li>
+			<li> Kreisliga Erlangen</li>
+		</ul>
+	</div>
+	
+	<div class="section">
+		<p>Kreisligen in Nordrhein-Westfalen</p>
+		<ul>
+			<li> Kreis Ahaus-Coesfeld</li>
+			<li> Kreis Arnsberg</li>
+			<li> Kreis Beckum</li>
+			<li> Kreis Bielefeld</li>
+			<li> Kreis Bochum</li>
+			<li> Kreis Detmold</li>
+		</ul>
+	</div>
+	
+	<div class="section">
+		<p>Kreisligen in Baden-Württemberg</p>
+		<ul>
+			<li> Kreis Aalen</li>
+			<li> Kreis Baden-Baden</li>
+			<li> Kreis Balingen</li>
+			<li> Kreis Biberach</li>
+			<li> Kreis Böblingen</li>
+			<li> Kreis Donau</li>
+		</ul>
+	</div>
+	
+	<div class="section">
+		<p>Kreisligen im Saarland</p>
+		<ul>
+			<li> Kreisliga Saarlouis</li>
+			<li> Kreisliga Merzig-Wadern</li>
+			<li> Kreisliga Neunkirchen</li>
+			<li> Kreisliga Saarpfalz</li>
+			<li> Kreisliga St. Wendel</li>
+		</ul>
+	</div>
+
+	<div class="section">
+		<p>Kreisligen in Niedersachsen</p>
+		<ul>
+			<li> Kreisliga Osnabrück-Stadt</li>
+			<li> Kreisliga Osnabrück-Land</li>
+			<li> Kreisliga Hannover-Stadt</li>
+			<li> Kreisliga Hannover-Land</li>
+			<li> Kreisliga Göttingen-Osterode</li>
+			<li> Kreisliga Hildesheim</li>
+			<li> Kreisliga Braunschweig</li>
+			<li> Kreisliga Salzgitter</li>
+			<li> Kreisliga Wolfsburg</li>
+			<li> Kreisliga Gifhorn</li>
+			<li> Kreisliga Stade</li>
+			<li> Kreisliga Cuxhaven</li>
+			<li> Kreisliga Lüneburg</li>
+			<li> Kreisliga Celle</li>
+			<li> Kreisliga Diepholz</li>
+			<li> Kreisliga Verden</li>
+			<li> Kreisliga Oldenburg</li>
+			<li> Kreisliga Emsland</li>
+			<li> Kreisliga Cloppenburg</li>
+			<li> Kreisliga Wilhelmshaven</li>
+			<li> Kreisliga Ammerland</li>
+		</ul>
+	</div>
+	<div class="section">
+		<p>Kreisligen in Hessen</p>
+		<ul>
+			<li> Kreisliga Darmstadt</li>
+			<li> Kreisliga Frankfurt</li>
+			<li> Kreisliga Hochtaunus</li>
+			<li> Kreisliga Lahn-Dill</li>
+			<li> Kreisliga Main-Taunus</li>
+			<li> Kreisliga Offenbach</li>
+			<li> Kreisliga Wiesbaden</li>
+			<li> Kreisliga Bergstraße</li>
+			<li> Kreisliga Gießen</li>
+			<li> Kreisliga Vogelsberg</li>
+			<li> Kreisliga Marburg-Biedenkopf</li>
+			<li> Kreisliga Rheingau-Taunus</li>
+			<li> Kreisliga Waldeck-Frankenberg</li>
+			<li> Kreisliga Kassel</li>
+			<li> Kreisliga Schwalm-Eder</li>
+			<li> Kreisliga Waldeck</li>
+			<li> Kreisliga Hersfeld-Rotenburg</li>
+		</ul>
+	</div>
+	<div class="section">
+		<p>Kreisligen im Rheinland</p>
+		<ul>
+			<li> Kreisliga Koblenz</li>
+			<li> Kreisliga Rhein-Ahr</li>
+			<li> Kreisliga Eifel</li>
+			<li> Kreisliga Westerwald-Wied</li>
+			<li> Kreisliga Montabaur</li>
+			<li> Kreisliga Hunsrück-Mittelrhein</li>
+			<li> Kreisliga Cochem-Zell</li>
+			<li> Kreisliga Trier</li>
+			<li> Kreisliga Mayen-Koblenz</li>
+			<li> Kreisliga Neuwied</li>
+			<li> Kreisliga Rhein-Lahn</li>
+			<li> Kreisliga Mainz-Bingen</li>
+			<li> Kreisliga Südwestpfalz</li>
+			<li> Kreisliga Rhein-Hunsrück</li>
+			<li> Kreisliga Westeifel</li>
+		</ul>
+	</div>
+	<div class="section">
+		<p>Kreisligen in Schleswig-Holstein</p>
+		<ul>
+			<li> Kreisliga Kiel</li>
+			<li> Kreisliga Lübeck</li>
+			<li> Kreisliga Nordfriesland</li>
+			<li> Kreisliga Ostholstein</li>
+			<li> Kreisliga Plön</li>
+			<li> Kreisliga Rendsburg-Eckernförde</li>
+			<li> Kreisliga Segeberg</li>
+			<li> Kreisliga Herzogtum Lauenburg</li>
+			<li> Kreisliga Steinburg</li>
+			<li> Kreisliga Dithmarschen</li>
+			<li> Kreisliga Schleswig-Flensburg</li>
+			<li> Kreisliga Stormarn</li>
+		</ul>
+	</div>
+
+	<div class="section">
+		<p>Kreisligen in Bremen</p>
+		<ul>
+			<li> Kreisliga Bremen-Stadt</li>
+			<li> Kreisliga Bremerhaven</li>
+		</ul>
+	</div>
+
+	<div class="section">
+		<p>Kreisligen in Hamburg</p>
+		<ul>
+			<li> Kreisliga Alster</li>
+			<li> Kreisliga Bille</li>
+			<li> Kreisliga Elbe</li>
+			<li> Kreisliga Eimsbüttel</li>
+			<li> Kreisliga Harburg</li>
+			<li> Kreisliga Hansa</li>
+			<li> Kreisliga Nord</li>
+			<li> Kreisliga Süd</li>
+		</ul>
+	</div>
+
+	<div class="section">
+		<p>Kreisligen in Thüringen</p>
+		<ul>
+			<li> Kreisliga Erfurt</li>
+			<li> Kreisliga Gera</li>
+			<li> Kreisliga Jena</li>
+			<li> Kreisliga Weimar</li>
+			<li> Kreisliga Altenburg</li>
+			<li> Kreisliga Gotha</li>
+			<li> Kreisliga Ilm-Kreis</li>
+			<li> Kreisliga Saale-Holzland</li>
+			<li> Kreisliga Mühlhausen</li>
+			<li> Kreisliga Schmalkalden-Meiningen</li>
+			<li> Kreisliga Sonneberg</li>
+			<li> Kreisliga Hildburghausen</li>
+		</ul>
+	</div>
+
+</body>
+</html>

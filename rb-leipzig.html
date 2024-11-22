@@ -1,0 +1,213 @@
+<!DOCTYPE html>
+<html lang="de">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>RB Leipzig</title>
+    <style>
+        body {
+            font-family: 'Arial', sans-serif;
+            margin: 0;
+            padding: 0;
+            background-color: #f7f7f7;
+            color: #333;
+            line-height: 1.6;
+        }
+
+        /* Header */
+        header {
+            background-color: #d50032; /* RB Leipzig Rot */
+            color: white;
+            padding: 20px;
+            text-align: center;
+            font-size: 2.5rem;
+            font-weight: bold;
+            position: relative;  /* Damit die Navigation-Icons innerhalb des Headers positioniert werden */
+        }
+
+        header img {
+            width: 50px;
+            margin-right: 10px;
+            vertical-align: middle;
+        }
+
+        /* Navigation Icons */
+        .navigation-icons {
+            position: absolute; /* Positioniert die Icons absolut im Header */
+            top: 20px;   /* Abstand zum oberen Rand des Headers */
+            left: 20px;  /* Abstand zum linken Rand des Headers */
+            display: flex;
+            gap: 15px;
+            z-index: 1000;    /* Sicherstellen, dass sie über anderen Elementen im Header liegen */
+        }
+
+        .nav-icon {
+            text-decoration: none;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            width: 40px;
+            height: 40px;
+            background-color: #fff;
+            color: black;
+            font-size: 20px;
+            border-radius: 50%;
+            box-shadow: 0px 2px 4px rgba(0, 0, 0, 0.2);
+            transition: transform 0.3s ease, background-color 0.3s ease, box-shadow 0.3s ease;
+        }
+
+        .nav-icon:hover {
+            transform: scale(1.2);
+            background-color: #ffcc00;
+            color: white;
+            box-shadow: 0px 4px 6px rgba(0, 0, 0, 0.3);
+        }
+
+        .nav-icon span {
+            font-size: 24px;
+        }
+
+        /* Main Content */
+        main {
+            max-width: 960px;
+            margin: 40px auto;
+            background-color: white;
+            padding: 30px;
+            border-radius: 10px;
+            box-shadow: 0 0 15px rgba(0, 0, 0, 0.1);
+        }
+
+        h1, h2 {
+            font-size: 2rem;
+            color: #1a1a1a;
+            margin-bottom: 15px;
+        }
+
+        ul {
+            list-style-type: disc;
+            padding-left: 30px;
+            margin-bottom: 20px;
+        }
+
+        ul li {
+            margin-bottom: 8px;
+        }
+
+        .legend-section ul {
+            list-style-type: none;
+            padding-left: 0;
+        }
+
+        .legend-section li {
+            background: #f9f9f9;
+            margin: 10px 0;
+            padding: 10px;
+            border-radius: 5px;
+        }
+
+        .stadium-section ul {
+            padding-left: 20px;
+            list-style-type: circle;
+        }
+
+        /* Footer */
+        footer {
+            background-color: #d50032; /* RB Leipzig Rot */
+            color: white;
+            text-align: center;
+            padding: 10px;
+            font-size: 1rem;
+        }
+
+        /* Styling Links */
+        a {
+            color: #d50032;
+            text-decoration: none;
+        }
+
+        a:hover {
+            text-decoration: underline;
+        }
+
+    </style>
+</head>
+<body>
+
+    <!-- Navigation Icons -->
+    <div class="navigation-icons">
+        <a href="javascript:history.back()" class="nav-icon" title="Zurück">
+            <span>&#8592;</span>
+        </a>
+        <a href="../Startseite.html" class="nav-icon" title="Startseite">
+            <span>&#8962;</span>
+        </a>
+    </div>
+
+    <header>
+        <img src="../Bundesliga Logos/RB_Leipzig_logo.png" alt="RB Leipzig Logo">
+        RB Leipzig
+    </header>
+
+    <main>
+        <h2>Allgemeine Fakten</h2>
+        <ul>
+            <li><strong>Gründung:</strong> 19.05.2009</li>
+            <li><strong>Stadt:</strong> Leipzig</li>
+            <li><strong>Stadion:</strong> Red Bull Arena</li>
+            <li><strong>Mitglieder:</strong> Über 40.000</li>
+            <li><strong>Farben:</strong> Rot-Weiß</li>
+            <li><strong>Weitere Sportarten:</strong> Fußball, E-Sport</li>
+        </ul>
+
+        <h2>Geschichte</h2>
+        <p>
+            RB Leipzig wurde 2009 gegründet, unterstützt von Red Bull. Der Verein hat von Anfang an enorme finanzielle Mittel erhalten und sich so schnell in der Bundesliga etabliert. Trotz der sportlichen Erfolge und der Teilnahme an internationalen Wettbewerben gibt es immer wieder Kritik an der Herkunft und den finanziellen Mitteln des Vereins. Diese Kritik betrifft vor allem die Wahrnehmung, dass RB Leipzig nicht auf die gleiche Art und Weise gewachsen ist wie viele traditionelle deutsche Vereine, sondern durch finanzielle Ressourcen von Red Bull geformt wurde.
+        </p>
+
+        <h2>Erfolge</h2>
+        <ul>
+            <li><strong>Deutscher Pokalsieger:</strong> 2022/23, 2021/22</li>
+            <li><strong>Deutscher Superpokalsieger:</strong> 2023/24</li>
+            <li><strong>Meister Regionalliga-Nordost:</strong> 2012/13</li>
+            <li><strong>Landespokal Sachsen Sieger:</strong> 2012/13, 2010/11</li>
+        </ul>
+
+        <h2>Legenden</h2>
+        <div class="legend-section">
+            <ul>
+                <li><strong>Yussuf Poulsen:</strong> Der Däne ist einer der bekanntesten Spieler des Vereins, aber auch eine Figur, die von vielen als Symbol des "neuen" RB Leipzig gesehen wird.</li>
+                <li><strong>Marcel Sabitzer:</strong> Der österreichische Kapitän hat den Verein sportlich geprägt, ist jedoch auch ein Beispiel für den schnellen Wechsel von Spielern in diesem finanziell geprägten Umfeld.</li>
+                <li><strong>Timo Werner:</strong> Der Stürmer, der durch seine Tore einen großen Anteil am Erfolg von RB Leipzig hatte, wechselte nach kurzer Zeit nach Chelsea, was den Vorwurf verstärkt, dass der Verein keine langfristige Bindung zu seinen Spielern aufbauen kann.</li>
+            </ul>
+        </div>
+
+        <h2>Fans und Stadion</h2>
+        <p>
+            Die Red Bull Arena ist das Zuhause von RB Leipzig und bietet Platz für über 42.000 Zuschauer. Während die Atmosphäre bei großen Spielen durchaus lebendig sein kann, ist die Unterstützung von RB Leipzig unter Fans anderer Vereine oft umstritten. Viele Fans kritisieren den Verein, da sie der Meinung sind, dass die Erfolge eher durch finanzielle Mittel und weniger durch eine echte Fanbasis oder traditionelles Vereinswachstum erzielt wurden.
+        </p>
+
+        <div class="stadium-section">
+            <ul>
+                <li>Kapazität: 42.000 Zuschauer</li>
+                <li>Modernste Ausstattung, jedoch kontroverse Fanbasis</li>
+                <li>Geprägt von der finanziellen Unterstützung durch Red Bull</li>
+            </ul>
+        </div>
+
+        <h2>Kultur und Philosophie</h2>
+        <p>
+            RB Leipzig verfolgt eine Philosophie des schnellen Spiels und der kontinuierlichen Weiterentwicklung, jedoch ist diese Philosophie eng verbunden mit der finanziellen Macht von Red Bull. Viele kritisieren, dass der Club seine Erfolge vor allem durch die finanziellen Mittel und weniger durch eine traditionelle Vereinsstruktur und -kultur erzielt hat.
+        </p>
+
+        <h2>Rivalitäten</h2>
+        <p>
+            RB Leipzig hat sich vor allem aufgrund seines schnellen Aufstiegs und seiner finanziellen Ressourcen Rivalitäten mit vielen traditionellen deutschen Clubs eingehandelt. Die Rivalität mit Vereinen wie dem 1. FC Union Berlin oder Borussia Dortmund ist besonders aufgrund der unterschiedlichen Philosophien und der Wahrnehmung des Vereins als "Kunstprojekt" oder "Marketing-Club" intensiv.
+        </p>
+    </main>
+
+    <footer>
+        © 2024 RB Leipzig Fan-Info
+    </footer>
+
+</body>
+</html>

@@ -1,0 +1,485 @@
+<!DOCTYPE html>
+<html lang="de">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>2. Bundesliga</title>
+    <style>
+        /* Allgemeine Einstellungen für die Liste */
+.team-list {
+    display: flex;
+    flex-wrap: wrap; /* Damit die Elemente in mehrere Reihen umbrechen, falls notwendig */
+    justify-content: center; /* Zentriert die Elemente horizontal */
+    padding: 0;
+    margin: 0;
+    list-style-type: none; /* Entfernt die Standardpunkte der Liste */
+}
+/* Gestaltung der Kästchen */
+.team-box {
+    width: 120px; /* Breite des Kästchens */
+    height: 120px; /* Höhe des Kästchens */
+    margin: 10px; /* Abstand zwischen den Kästchen */
+    display: flex;
+    justify-content: center; /* Zentriert das Logo horizontal */
+    align-items: center; /* Zentriert das Logo vertikal */
+    background-color: #f0f0f0; /* Heller Hintergrund für jedes Kästchen */
+    border-radius: 8px; /* Abgerundete Ecken */
+    transition: background-color 0.3s ease; /* Für sanfte Übergänge beim Hover */
+}
+
+/* Logo-Styling */
+.team-logo {
+    width: 80%; /* Setzt die Logo-Größe auf 80% der Box */
+    height: 80%; /* Setzt die Logo-Größe auf 80% der Box */
+    object-fit: contain; /* Sorgt dafür, dass das Logo im Container skaliert wird, ohne es zu verzerren */
+}
+
+/* Hover-Effekt */
+.team-box:hover {
+    background-color: #ddd; /* Dunklerer Hintergrund beim Hover */
+}
+
+/* Text-Styling in den Kästchen */
+.team-box a {
+    text-decoration: none; /* Unterstreichung entfernen */
+    color: blue; /* Standardfarbe */
+    font-weight: bold;
+}
+
+.team-box:hover a {
+    color: #1E90FF; /* Textfarbe bei Hover-Effekt */
+}
+
+/* Text-Styling */
+.team-box span {
+    font-size: 1rem;
+    font-weight: bold;
+    color: #333;
+}
+
+        body {
+            font-family: Arial, sans-serif;
+            line-height: 1.6;
+            background-color: #f4f4f4;
+            margin: 0;
+            padding: 0;
+            color: #333;
+        }
+
+/* Navigation-Symbole (Back Arrow & Home Icon) */
+.navigation-icons {
+    position: absolute;
+    top: 10px;
+    left: 10px;
+    display: flex;
+    gap: 15px;
+    z-index: 1000;
+}
+
+.nav-icon {
+    text-decoration: none;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 40px;
+    height: 40px;
+    background-color: #f0f0f0;
+    color: black;
+    font-size: 20px;
+    border-radius: 50%;
+    box-shadow: 0px 2px 4px rgba(0, 0, 0, 0.2);
+    transition: transform 0.3s ease, background-color 0.3s ease, box-shadow 0.3s ease;
+}
+
+.nav-icon:hover {
+    transform: scale(1.2);
+    background-color: #ffcc00;
+    color: white;
+    box-shadow: 0px 4px 6px rgba(0, 0, 0, 0.3);
+}
+
+.nav-icon span {
+    font-size: 24px;
+}
+
+        header {
+            background-color: #ff0000;
+            color: #ffd700;
+            text-align: center;
+            padding: 20px 0;
+            font-size: 2.5rem;
+            font-weight: bold;
+            box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+            position: relative; /* For positioning the arrow and house */
+        }
+
+        /* Positioning the back arrow and home symbol */
+        .header-icons {
+            position: absolute;
+            top: 10px;
+            left: 20px;
+        }
+
+        .header-icons a {
+            color: #ffd700;
+            font-size: 2rem;
+            margin-right: 20px;
+            text-decoration: none;
+        }
+
+        .header-icons a:hover {
+            text-decoration: underline;
+        }
+
+        nav {
+            text-align: center;
+            background-color: #ffd700;
+            padding: 10px 0;
+            border-bottom: 3px solid #000;
+        }
+
+        nav a {
+            color: #007bff; /* Blau für Links */
+            text-decoration: none;
+            font-size: 1.2rem;
+            margin: 0 15px;
+            font-weight: bold;
+        }
+
+        nav a:hover {
+            text-decoration: none;
+        }
+
+        .content {
+            max-width: 1200px;
+            margin: 20px auto;
+            background-color: #fff;
+            padding: 20px;
+            border-radius: 8px;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+        }
+
+        h1 {
+            text-align: center;
+            font-size: 2.5rem;
+            color: #000;
+        }
+
+        h2 {
+            color: #ff0000;
+            margin-top: 20px;
+            font-size: 2rem;
+        }
+
+        p {
+            font-size: 1.2rem;
+            margin-bottom: 20px;
+        }
+
+        ul {
+            list-style-type: none;
+            padding: 0;
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
+            gap: 15px;
+        }
+
+        ul li {
+            background-color: #f4f4f4;
+            border: 2px solid #ddd;
+            border-radius: 8px;
+            padding: 10px;
+            text-align: center;
+            transition: background-color 0.3s, transform 0.3s;
+            position: relative; /* For positioning the background color */
+        }
+
+        /* Add specific background color for each club on hover */
+        ul li:hover {
+            transform: scale(1.05);
+        }
+
+        ul li a {
+            text-decoration: none;
+            color: #007bff;
+            font-size: 1.1rem;
+            font-weight: bold;
+            display: block;
+            margin-top: 10px;
+        }
+
+        ul li a:hover {
+            text-decoration: none;
+        }
+
+/* Hover backgrounds for individual teams */
+/* Hamburger SV */
+li#hamburger-sv:hover {
+    background-color: #033b85; /* Dunkelblau */
+    color: white;
+}
+
+/* SV Elversberg */
+li#sv-elversberg:hover {
+    background-color: #000000; /* Grün */
+    color: white;
+}
+
+/* 1. FC Köln */
+li#fc-koln:hover {
+    background-color: #dc0b0b; 
+    color: black;
+}
+
+/* 1. FC Nürnberg */
+li#fc-nurnberg:hover {
+    background-color: #d10000; /* Rot */
+    color: white;
+}
+
+/* 1. FC Magdeburg */
+li#fc-magdeburg:hover {
+    background-color: #005f85; /* Blau */
+    color: white;
+}
+
+/* 1. FC Kaiserslautern */
+li#fc-kaiserslautern:hover {
+    background-color: #e60000; /* Rot */
+    color: white;
+}
+
+/* Hertha BSC */
+li#hertha-bsc:hover {
+    background-color: #003f87; /* Blau */
+    color: white;
+}
+
+/* Hannover 96 */
+li#hannover-96:hover {
+    background-color: #f31830; /* Rot */
+    color: white;
+}
+
+/* SC Paderborn 07 */
+li#sc-paderborn-07:hover {
+    background-color: #003b5c; /* Blau */
+    color: white;
+}
+
+/* Fortuna Düsseldorf */
+li#fortuna-duesseldorf:hover {
+    background-color: #e2001a; /* Rot */
+    color: white;
+}
+
+/* Karlsruher SC */
+li#karlsruher-sc:hover {
+    background-color: #003c71; /* Blau */
+    color: white;
+}
+
+/* SV Darmstadt 98 */
+li#sv-darmstadt-98:hover {
+    background-color: #07558d; /* Blau */
+    color: white;
+}
+
+/* SpVgg Greuther Fürth */
+li#spvgg-greuther-fuerth:hover {
+    background-color: #006400; /* Grün */
+    color: white;
+}
+
+/* FC Schalke 04 */
+li#fc-schalke-04:hover {
+    background-color: #006ab6; /* Blau */
+    color: white;
+}
+
+/* Eintracht Braunschweig */
+li#eintracht-braunschweig:hover {
+    background-color: #f3a300; /* Gelb */
+    color: black;
+}
+
+/* Preußen Münster */
+li#preussen-munster:hover {
+    background-color: #00813b; /* Grün */
+    color: white;
+}
+
+/* SSV Ulm 1846 Fußball */
+li#ssv-ulm-1846-fussball:hover {
+    background-color: #003f87; /* Blau */
+    color: white;
+}
+
+/* Jahn Regensburg */
+li#jahn-regensburg:hover {
+    background-color: #990000; /* Rot */
+    color: white;
+}
+
+        img {
+            display: block;
+            margin: 15px auto;
+            max-width: 150px;
+            height: auto;
+        }
+
+        footer {
+            text-align: center;
+            padding: 10px 0;
+            background-color: #ff0000;
+            color: #fff;
+            font-size: 0.9rem;
+            position: relative;
+            bottom: 0;
+            width: 100%;
+        }
+
+    </style>
+</head>
+<body>
+
+    <header>
+    <!-- Navigation-Symbole -->
+    <div class="navigation-icons">
+        <!-- Zurück-Pfeil -->
+        <a href="javascript:history.back()" class="nav-icon" title="Zurück">
+            <span>&#8592;</span> <!-- Pfeil nach links -->
+        </a>
+
+        <!-- Haus-Symbol für Startseite -->
+        <a href="../Startseite.html" class="nav-icon" title="Startseite">
+            <span>&#8962;</span> <!-- Haus-Symbol -->
+        </a>
+    </div>
+        <span>2. Bundesliga</span>
+    </header>
+
+    <div class="content">
+        <img src="../Logo Bilder/2._Bundesliga_logo.png" width="200">
+        
+        <h1>2. Bundesliga</h1>
+        <p>Die 2. Bundesliga ist die zweithöchste Liga und stellt eine wichtige Übergangs- und Entwicklungsliga für viele junge Talente dar. In dieser Liga kämpfen 18 Vereine um den Aufstieg in die Bundesliga, wobei die ersten zwei Plätze direkt aufsteigen und der Dritte in einem Relegationsspiel gegen den Drittletzten der Bundesliga antritt.</p>
+
+        <h2>Alle Vereine</h2>
+        <ul class="team-list">
+            <!-- Hamburger SV -->
+            <a href="../Buli Teams/hamburger-sv.html">
+                <li id="hamburger-sv" class="team-box">
+                    <img src="../Regionalliga Nord Logos/Hamburger_SV_logo.png" alt="Hamburger SV Logo" class="team-logo">
+                </li>
+            </a>
+            <!-- SV Elversberg -->
+            <a href="../Buli Teams/sv-elversberg.html">
+                <li id="sv-elversberg" class="team-box">
+                    <img src="../2. Bundesliga Logos/SV_Elversberg_Logo_2021.png" alt="SV Elversberg Logo" class="team-logo">
+                </li>
+            </a>
+            <!-- 1. FC Köln -->
+            <a href="../Buli Teams/1-fc-koln.html">
+                <li id="fc-koln" class="team-box">
+                    <img src="../2. Bundesliga Logos/1._FC_Koeln_Logo_2014–.png" alt="1. FC Köln Logo" class="team-logo">
+                </li>
+            </a>
+            <!-- 1. FC Nürnberg -->
+            <a href="../Buli Teams/1-fc-nurnberg.html">
+                <li id="fc-nurnberg" class="team-box">
+                    <img src="../2. Bundesliga Logos/1._FC_Nürnberg_logo.png" alt="1. FC Nürnberg Logo" class="team-logo">
+                </li>
+            </a>
+            <!-- 1. FC Magdeburg -->
+            <a href="../Buli Teams/1-fc-magdeburg.html">
+                <li id="fc-magdeburg" class="team-box">
+                    <img src="../2. Bundesliga Logos/1._FC_Magdeburg.png" alt="1. FC Magdeburg Logo" class="team-logo">
+                </li>
+            </a>
+            <!-- 1. FC Kaiserslautern -->
+            <a href="../Buli Teams/1-fc-kaiserslautern.html">
+                <li id="fc-kaiserslautern" class="team-box">
+                    <img src="../2. Bundesliga Logos/Logo_1_FC_Kaiserslautern.png" alt="1. FC Kaiserslautern Logo" class="team-logo">
+                </li>
+            </a>
+            <!-- Hertha BSC -->
+            <a href="../Buli Teams/hertha-bsc.html">
+                <li id="hertha-bsc" class="team-box">
+                    <img src="../2. Bundesliga Logos/Hertha_BSC_Logo_2012.png" alt="Hertha BSC Logo" class="team-logo">
+                </li>
+            </a>
+            <!-- Hannover 96 -->
+            <a href="../Buli Teams/hannover-96.html">
+                <li id="hannover-96" class="team-box">
+                    <img src="../2. Bundesliga Logos/Hannover_96_Logo.png" alt="Hannover 96 Logo" class="team-logo">
+                </li>
+            </a>
+            <!-- SC Paderborn 07 -->
+            <a href="../Buli Teams/sc-paderborn-07.html">
+                <li id="sc-paderborn-07" class="team-box">
+                    <img src="../2. Bundesliga Logos/SC_Paderborn_07_Logo_new.png" alt="SC Paderborn 07 Logo" class="team-logo">
+                </li>
+            </a>
+            <!-- Fortuna Düsseldorf -->
+            <a href="../Buli Teams/fortuna-duesseldorf.html">
+                <li id="fortuna-duesseldorf" class="team-box">
+                    <img src="../2. Bundesliga Logos/Fortuna_Düsseldorf.png" alt="Fortuna Düsseldorf Logo" class="team-logo">
+                </li>
+            </a>
+            <!-- Karlsruher SC -->
+            <a href="../Buli Teams/karlsruher-sc.html">
+                <li id="karlsruher-sc" class="team-box">
+                    <img src="../2. Bundesliga Logos/Karlsruher_SC_Logo_2.png" alt="Karlsruher SC Logo" class="team-logo">
+                </li>
+            </a>
+            <!-- SV Darmstadt 98 -->
+            <a href="../Buli Teams/sv-darmstadt-98.html">
+                <li id="sv-darmstadt-98" class="team-box">
+                    <img src="../2. Bundesliga Logos/SV_Darmstadt_98_Logo.png" alt="SV Darmstadt 98 Logo" class="team-logo">
+                </li>
+            </a>
+            <!-- SpVgg Greuther Fürth -->
+            <a href="../Buli Teams/spvgg-greuther-fuerth.html">
+                <li id="spvgg-greuther-fuerth" class="team-box">
+                    <img src="../2. Bundesliga Logos/SpVgg_Greuther_Fürth_2017.png" alt="SpVgg Greuther Fürth Logo" class="team-logo">
+                </li>
+            </a>
+            <!-- FC Schalke 04 -->
+            <a href="../Buli Teams/fc-schalke-04.html">
+                <li id="fc-schalke-04" class="team-box">
+                    <img src="../2. Bundesliga Logos/FC_Schalke_04_Logo.png" alt="FC Schalke 04 Logo" class="team-logo">
+                </li>
+            </a>
+            <!-- Eintracht Braunschweig -->
+            <a href="../Buli Teams/eintracht-braunschweig.html">
+                <li id="eintracht-braunschweig" class="team-box">
+                    <img src="../2. Bundesliga Logos/Logo_Eintracht_Braunschweig.png" alt="Eintracht Braunschweig Logo" class="team-logo">
+                </li>
+            </a>
+            <!-- Preußen Münster -->
+            <a href="../Buli Teams/preussen-munster.html">
+                <li id="preussen-munster" class="team-box">
+                    <img src="../2. Bundesliga Logos/SC_Preussen_Muenster_Logo_2018.png" alt="Preußen Münster Logo" class="team-logo">
+                </li>
+            </a>
+            <!-- SSV Ulm 1846 Fußball -->
+            <a href="../Buli Teams/ssv-ulm-1846-fussball.html">
+                <li id="ssv-ulm-1846-fussball" class="team-box">
+                    <img src="../2. Bundesliga Logos/SSV_Ulm_1846_Fussball.png" alt="SSV Ulm 1846 Fußball Logo" class="team-logo">
+                </li>
+            </a>
+            <!-- Jahn Regensburg -->
+            <a href="../Buli Teams/jahn-regensburg.html">
+                <li id="jahn-regensburg" class="team-box">
+                    <img src="../2. Bundesliga Logos/Jahn_Regensburg_logo2014.png" alt="Jahn Regensburg Logo" class="team-logo">
+                </li>
+            </a>
+        </ul>
+    </div>
+
+    <footer>
+        <p>&copy; 2024 Alle Rechte vorbehalten</p>
+    </footer>
+</body>
+</html>
